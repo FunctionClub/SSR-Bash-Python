@@ -4,10 +4,9 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #Check Root
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
 
-echo "欢迎使用 SSR-Bash (Python Base) Author:Kirito 雨落无声"
+echo "欢迎使用 AR (Python Base) "
 
-echo 'Function Club 无限期停更说明'
-echo 'https://www.ixh.me/2017/05/function-club-stop/'
+
 echo "输入数字选择功能："
 echo ""
 echo "1.服务器控制"
