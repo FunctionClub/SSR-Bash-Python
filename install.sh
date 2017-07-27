@@ -59,8 +59,10 @@ fi
 
 #Install SSR and SSR-Bash
 cd /usr/local
-git clone https://github.com/shadowsocksr/shadowsocksr.git
-git clone https://github.com/FunctionClub/SSR-Bash-Python.git
+git clone https://github.com/Admin-backups/AR.git
+mv AR shadowsocksr
+git clone https://github.com/Admin-backups/AR-B-P-B.git
+mv AR-B-P-B SSR-Bash-Python
 cd /usr/local/shadowsocksr
 bash initcfg.sh
 
@@ -139,7 +141,7 @@ systemctl enable iptables.service
 fi
 
 #Install SSR-Bash Background
-wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/FunctionClub/SSR-Bash-Python/master/ssr
+wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/Admin-backups/AR-B-P-B/master/ssr
 chmod +x /usr/local/bin/ssr
 
 #Modify ShadowsocksR API
@@ -149,9 +151,8 @@ sed -i "s/SERVER_PUB_ADDR = '127.0.0.1'/SERVER_PUB_ADDR = '$(wget -qO- -t1 -T2 i
 #INstall Success
 bash /usr/local/SSR-Bash-Python/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
-echo 'Telegram Group: https://t.me/functionclub'
-echo 'Google Puls: https://plus.google.com/communities/113154644036958487268'
-echo 'Github: https://github.com/FunctionClub'
-echo 'QQ Group:277717865'
-echo 'Function Club 无限期停更说明'
-echo 'https://www.ixh.me/2017/05/function-club-stop/'
+echo '原作者已经停止本脚本服务，此版本为2017.7.20号的备份（带最新端口限速）'
+echo '还好在作者删服务前备份了'
+echo '谨慎使用！仅供研究！'
+echo '谨慎使用！仅供研究！'
+echo '谨慎使用！仅供研究！'
