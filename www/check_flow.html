@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="initial-scale=1.0, width=device-width" name="viewport">
+    <title>使用流量查询</title>
+    <!-- css -->
+    <link href="css/base.min.css" rel="stylesheet">
+
+    <!-- favicon -->
+    <!-- ... -->
+
+    <!-- ie -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js" type="text/javascript"></script>
+        <script src="js/respond.js" type="text/javascript"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+
+
+    <div class="content">
+        <div class="content-heading">
+            <div class="container">
+                <h1 class="heading">使用流量查询</h1>
+            </div>
+        </div>
+        <div class="content-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="form-group form-group-green">
+                        <form action="/cgi-bin/check_flow.py">
+                            <div class="col-lg-2 col-md-3 col-sm-4">
+                                <label class="form-label" for="input-inline">请输入端口：</label>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-8">
+                                <input class="form-control form-control-inline" id="input-inline" type="text" name="port"></br>
+                                </br><button class="btn btn-green" type="submit">提交</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>Function Club</p>
+        </div>
+    </footer>
+
+    <script src="js/base.min.js" type="text/javascript"></script>
+</body>
+
+</html>
