@@ -34,11 +34,11 @@ A=SS
 - 未设置开机启动
 
 ## 安装 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/SSR-Bash-Python/master/install.sh && bash install.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/Admin-backups/AR-B-P-B/master/install.sh && bash install.sh
 
 ## 卸载 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/SSR-Bash-Python/master/uninstall.sh && bash uninstall.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/Admin-backups/AR-B-P-B/master/uninstall.sh && bash uninstall.sh
     
 ## 自检 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/SSR-Bash-Python/master/self-check.sh && bash self-check.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/Admin-backups/AR-B-P-B/master/self-check.sh && bash self-check.sh
 
