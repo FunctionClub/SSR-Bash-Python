@@ -132,6 +132,7 @@ if [[ $serverc == 7 ]];then
 	#Get IP
 	ip=`curl -m 10 -s http://members.3322.org/dyndns/getip`
 	clear
+	chmod -R 777 /usr/local/SSR-Bash-Python
 	cd /usr/local/SSR-Bash-Python/www
 	screen -dmS webcgi python -m CGIHTTPServer $cgiport
 	echo "WEB服务启动成功，请访问 http://${ip}:$cgiport"
