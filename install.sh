@@ -154,7 +154,7 @@ read -p "输入与您主机绑定的域名: " ipname
 ehco "$ipname" > /usr/local/shadowsocksr/myip.txt
 bash /usr/local/SSR-Bash-Python/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
-echo '原作者已经停止本脚本服务，此版本为2017.7.20号的备份（带最新端口限速）'
+echo '原作者已经停止本脚本服务，此版本为2017.7.30号的备份（带最新端口限速）'
 echo '还好在作者删服务前备份了'
 echo '谨慎使用！仅供研究！'
 echo '谨慎使用！仅供研究！'
