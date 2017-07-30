@@ -1,5 +1,3 @@
-A=SS
-
 # AR多用户管理脚本（基于官方mujson版本）
 
 ## 介绍 ##
@@ -33,8 +31,8 @@ A=SS
 - 未设置开机启动
 
 ## 安装 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/Admin-backups/AR-B-P-B/master/install.sh && bash install.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh
 
 ## 自检 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/Admin-backups/AR-B-P-B/master/self-check.sh && bash self-check.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/self-check.sh && bash self-check.sh
 
