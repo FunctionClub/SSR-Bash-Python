@@ -1,8 +1,8 @@
-# AR多用户管理脚本（基于官方mujson版本）
+# SSR多用户管理脚本（基于官方mujson版本）
 
 ## 介绍 ##
 
-一个Shell脚本，集成SSR多用户管理，流量限制，加密更改等基本操作。是一个基于ShadowsocksR官方的mujson的辅助脚本。方便用户操作!
+一个Shell脚本，集成SSR多用户管理，流量限制，加密更改等基本操作。是一个基于ShadowsocksR官方的mujson的辅助脚本。方便用户操作，并且支持快速构建SSR服务环境。
 
 - 请谨慎使用，出问题概不负责！！！！
 
@@ -35,4 +35,3 @@
 
 ## 自检 ##
     wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/self-check.sh && bash self-check.sh
-
