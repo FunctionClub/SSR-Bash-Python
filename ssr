@@ -14,9 +14,10 @@ echo "2.用户管理"
 echo "3.全局流量管理"
 echo "4.实验性功能"
 echo "5.程序自检"
+echo "6.一键添加用户(使用最优配置)"
 while :; do echo
 	read -p "请选择： " choice
-	if [[ ! $choice =~ ^[1-5]$ ]]; then
+	if [[ ! $choice =~ ^[1-6]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
@@ -41,4 +42,8 @@ fi
 
 if [[ $choice == 5 ]];then
 	bash /usr/local/SSR-Bash-Python/self-check.sh
+fi
+
+if [[ $choice == 6 ]];then
+	bash /usr/local/SSR-Bash-Python/user/easyadd.sh
 fi
