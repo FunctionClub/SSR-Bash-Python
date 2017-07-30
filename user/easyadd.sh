@@ -53,7 +53,7 @@ while :; do echo
 	fi
 done
 iflimitspeed="y"
-us="1500"
+us="2048"
 
 #Set Firewalls
 if [[ ${OS} =~ ^Ubuntu$|^Debian$ ]];then
