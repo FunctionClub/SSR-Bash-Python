@@ -1,5 +1,4 @@
 language: bash
 
 install:
-  - sudo bash install.sh
-  - sudo bash ssr
+  - sudo bash install_test.sh
