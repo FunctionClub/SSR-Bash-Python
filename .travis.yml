@@ -1,0 +1,5 @@
+language: bash
+
+install:
+  - sudo bash install.sh
+  - sudo bash ssr
