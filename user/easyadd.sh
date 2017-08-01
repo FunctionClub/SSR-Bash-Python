@@ -1,5 +1,4 @@
- 
-#!/bin/bash
+ #!/bin/bash
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 
@@ -42,8 +41,6 @@ read -p "输入密码： " upass
 um1="none"
 ux1="auth_chain_a"
 uo1="tls1.2_ticket_auth"
-uo2=${uo1}"_compatible"
-ux2=${ux1}"_compatible"
 while :; do echo
 	read -p "输入流量限制(只需输入数字，单位：GB)： " ut
 	if [[ "$ut" =~ ^(-?|\+?)[0-9]+(\.?[0-9]+)?$ ]];then
