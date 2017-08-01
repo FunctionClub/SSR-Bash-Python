@@ -39,7 +39,7 @@ echo ""
 read -p "输入用户名： " uname
 uport=`head -200 /dev/urandom | cksum | awk -F" " '{ print $2 }'`
 read -p "输入密码： " upass
-um1="chacha20"
+um1="none"
 ux1="auth_chain_a"
 uo1="tls1.2_ticket_auth"
 uo2=${uo1}"_compatible"
