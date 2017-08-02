@@ -35,8 +35,19 @@ fi
 workdir=$(pwd)
 
 #Install Basic Tools
-echo "开始部署"
+if [ -e /usr/local/bin/ssr ];then
+	echo "开始更新"
+	sleep 1s
+	echo "正在清理老版本"
+	rm -f /usr/local/bin/ssr
+	rm -rf /usr/local/shadowsocksr
+	rm -rf /usr/local/SSR-Bash-Python
+	sleep 1s
+	echo "开始部署"
+fi
 if [ ! -e /usr/local/bin/ssr ];then
+echo "开始部署"
+sleep 2s
 if [[ ${OS} == Ubuntu ]];then
 	apt-get update
 	apt-get install python -y
@@ -72,11 +83,6 @@ cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
 fi
 
 #Install SSR and SSR-Bash
-if [ -e /usr/local/bin/ssr ];then
-	rm -f /usr/local/bin/ssr
-	rm -rf /usr/local/shadowsocksr
-	rm -rf /usr/local/SSR-Bash-Python
-fi
 cd /usr/local
 git clone https://github.com/Readour/shadowsocksr.git
 git clone https://github.com/Readour/AR-B-P-B.git
@@ -155,7 +161,7 @@ sed -i "s/UPDATE_TIME = 60/UPDATE_TIME = 10/g" /usr/local/shadowsocksr/userapico
 sed -i "s/SERVER_PUB_ADDR = '127.0.0.1'/SERVER_PUB_ADDR = '$(wget -qO- -t1 -T2 ipinfo.io/ip)'/" /usr/local/shadowsocksr/userapiconfig.py
 #INstall Success
 read -p "输入与您主机绑定的域名: " ipname
-ehco "$ipname" > /usr/local/shadowsocksr/myip.txt
+echo "$ipname" > /usr/local/shadowsocksr/myip.txt
 bash /usr/local/SSR-Bash-Python/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
 echo '原作者已经停止本脚本服务，此版本为2017.7.30号的备份（带最新端口限速）'
