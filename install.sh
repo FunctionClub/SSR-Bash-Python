@@ -70,6 +70,8 @@ make install
 popd
 ldconfig
 cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
+cd /usr/local
+git clone https://github.com/Readour/shadowsocksr.git
 fi
 
 #Install SSR and SSR-Bash
@@ -78,13 +80,12 @@ if [ -e /usr/local/bin/ssr ];then
 	sleep 1s
 	echo "正在清理老版本"
 	rm -f /usr/local/bin/ssr
-	rm -rf /usr/local/shadowsocksr
 	rm -rf /usr/local/SSR-Bash-Python
 	sleep 1s
 	echo "开始部署"
+	git pull 
 fi
 cd /usr/local
-git clone https://github.com/Readour/shadowsocksr.git
 git clone https://github.com/Readour/AR-B-P-B.git
 mv AR-B-P-B SSR-Bash-Python
 cd /usr/local/shadowsocksr
