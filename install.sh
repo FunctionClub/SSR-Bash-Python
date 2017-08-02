@@ -61,8 +61,8 @@ if [[ ${OS} == Debian ]];then
 fi
 #Install Libsodium
 cd $workdir
-export LIBSODIUM_VER=1.0.11
-wget https://github.com/jedisct1/libsodium/releases/download/1.0.11/libsodium-$LIBSODIUM_VER.tar.gz
+export LIBSODIUM_VER=1.0.13
+wget https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-$LIBSODIUM_VER.tar.gz
 tar xvf libsodium-$LIBSODIUM_VER.tar.gz
 pushd libsodium-$LIBSODIUM_VER
 ./configure --prefix=/usr && make
