@@ -72,6 +72,11 @@ cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
 fi
 
 #Install SSR and SSR-Bash
+if [ -e /usr/local/bin/ssr ];then
+	rm -f /usr/local/bin/ssr
+	rm -rf /usr/local/shadowsocksr
+	rm -rf /usr/local/SSR-Bash-Python
+fi
 cd /usr/local
 git clone https://github.com/Readour/shadowsocksr.git
 git clone https://github.com/Readour/AR-B-P-B.git
