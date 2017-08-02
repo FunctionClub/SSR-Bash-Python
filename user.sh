@@ -16,7 +16,7 @@ echo "直接回车返回上级菜单"
 while :; do echo
 	read -p "请选择： " userc
 	[ -z "$userc" ] && ssr && break
-	if [[ ! $userc =~ ^[1-5]$ ]]; then
+	if [[ ! $userc =~ ^[1-6]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
