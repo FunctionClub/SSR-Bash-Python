@@ -95,7 +95,7 @@ if [[ $SSRPID == "" ]]; then
 	echo "ShadowsocksR服务器已启动"
 fi
 
-myipname=`cat ./myip.txt`
+myipname=`cat /usr/local/shadowsocksr/myip.txt`
 echo "你可以复制以下信息给你的用户: "
 echo "===================="
 echo "用户名: $uname"
@@ -106,5 +106,5 @@ echo "密码: $upass"
 echo "加密方法: $um1"
 echo "协议: $ux1"
 echo "混淆方式: $uo1"
-echo "流量: $ut"
+echo "流量: $ut GB"
 echo "===================="

@@ -36,7 +36,7 @@ workdir=$(pwd)
 
 #Install Basic Tools
 echo "开始部署"
-
+if [ ! -e /usr/local/bin/ssr ];then
 if [[ ${OS} == Ubuntu ]];then
 	apt-get update
 	apt-get install python -y
@@ -58,15 +58,6 @@ if [[ ${OS} == Debian ]];then
 	apt-get install git -y
     apt-get install build-essential -y
 fi
-
-#Install SSR and SSR-Bash
-cd /usr/local
-git clone https://github.com/Readour/shadowsocksr.git
-git clone https://github.com/Readour/AR-B-P-B.git
-mv AR-B-P-B SSR-Bash-Python
-cd /usr/local/shadowsocksr
-bash initcfg.sh
-
 #Install Libsodium
 cd $workdir
 export LIBSODIUM_VER=1.0.11
@@ -78,6 +69,15 @@ make install
 popd
 ldconfig
 cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
+fi
+
+#Install SSR and SSR-Bash
+cd /usr/local
+git clone https://github.com/Readour/shadowsocksr.git
+git clone https://github.com/Readour/AR-B-P-B.git
+mv AR-B-P-B SSR-Bash-Python
+cd /usr/local/shadowsocksr
+bash initcfg.sh
 
 #Start when boot
 if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
@@ -113,7 +113,6 @@ bash /usr/local/shadowsocksr/logrun.sh
     chmod +x /etc/rc.d/rc.local
 fi
 
-
 #Change CentOS7 Firewall
 if [[ ${OS} == CentOS && $CentOS_RHEL_version == 7 ]];then
     systemctl stop firewalld.service
@@ -142,7 +141,7 @@ systemctl enable iptables.service
 fi
 
 #Install SSR-Bash Background
-wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/Admin-backups/AR-B-P-B/master/ssr
+wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/readour/AR-B-P-B/master/ssr
 chmod +x /usr/local/bin/ssr
 
 #Modify ShadowsocksR API

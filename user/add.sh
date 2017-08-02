@@ -67,9 +67,10 @@ echo '3.auth_aes128_md5'
 echo '4.auth_aes128_sha1'
 echo '5.verify_deflate'
 echo '6.auth_chain_a'
+echo '7.auth_chain_b'
 while :; do echo
 	read -p "输入协议方式： " ux
-	if [[ ! $ux =~ ^[1-6]$ ]]; then
+	if [[ ! $ux =~ ^[1-7]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
@@ -161,6 +162,9 @@ fi
 
 if [[ $ux == 6 ]];then
 	ux1="auth_chain_a"
+fi
+if [[ $ux == 7 ]];then
+	ux1="auth_chain_b"
 fi
 
 if [[ $uo == 1 ]];then
@@ -260,7 +264,7 @@ if [[ $SSRPID == "" ]]; then
     bash /usr/local/shadowsocksr/logrun.sh
 	echo "ShadowsocksR服务器已启动"
 fi
-myipname=`cat ./myip.txt`
+myipname=`cat /usr/local/shadowsocksr/myip.txt`
 echo "你可以复制以下信息给你的用户: "
 echo "===================="
 echo "用户名: $uname"
@@ -271,5 +275,5 @@ echo "密码: $upass"
 echo "加密方法: $um1"
 echo "协议: $ux1"
 echo "混淆方式: $uo1"
-echo "流量: $ut"
+echo "流量: $ut GB"
 echo "===================="

@@ -15,14 +15,19 @@ echo "3.全局流量管理"
 echo "4.实验性功能"
 echo "5.程序自检"
 echo "6.一键添加用户(使用最优配置)"
+echo "0.退出程序"
 while :; do echo
-	read -p "请选择： " choice
-	if [[ ! $choice =~ ^[1-6]$ ]]; then
+	read -n 1 -p "请选择： " choice
+	if [[ ! $choice =~ ^[0-6]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
 	fi
 done
+
+if [[ $choice == 0 ]];then
+	exit 0
+fi
 
 if [[ $choice == 1 ]];then
 	bash /usr/local/SSR-Bash-Python/server.sh
