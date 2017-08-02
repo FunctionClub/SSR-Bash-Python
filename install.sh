@@ -35,16 +35,6 @@ fi
 workdir=$(pwd)
 
 #Install Basic Tools
-if [ -e /usr/local/bin/ssr ];then
-	echo "开始更新"
-	sleep 1s
-	echo "正在清理老版本"
-	rm -f /usr/local/bin/ssr
-	rm -rf /usr/local/shadowsocksr
-	rm -rf /usr/local/SSR-Bash-Python
-	sleep 1s
-	echo "开始部署"
-fi
 if [ ! -e /usr/local/bin/ssr ];then
 echo "开始部署"
 sleep 2s
@@ -83,6 +73,16 @@ cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
 fi
 
 #Install SSR and SSR-Bash
+if [ -e /usr/local/bin/ssr ];then
+	echo "开始更新"
+	sleep 1s
+	echo "正在清理老版本"
+	rm -f /usr/local/bin/ssr
+	rm -rf /usr/local/shadowsocksr
+	rm -rf /usr/local/SSR-Bash-Python
+	sleep 1s
+	echo "开始部署"
+fi
 cd /usr/local
 git clone https://github.com/Readour/shadowsocksr.git
 git clone https://github.com/Readour/AR-B-P-B.git
