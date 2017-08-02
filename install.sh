@@ -83,6 +83,7 @@ if [ -e /usr/local/bin/ssr ];then
 	rm -rf /usr/local/SSR-Bash-Python
 	sleep 1s
 	echo "开始部署"
+	cd /usr/local/shadowsocksr
 	git pull 
 fi
 cd /usr/local
