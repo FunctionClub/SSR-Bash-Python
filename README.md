@@ -30,7 +30,7 @@
 - 无法删除最后一名用户（官方限制）
 - 未设置开机启动
 
-## 安装 ##
+## 安装&更新 ##
     wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh
 
 ## 自检 ##
