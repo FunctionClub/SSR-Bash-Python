@@ -89,7 +89,7 @@ if [ -e /usr/local/bin/ssr ];then
 	echo "开始部署"
 	cd /usr/local/shadowsocksr
 	git pull
-    git manyuser
+    git checkout manyuser
     if [ $1 == "develop" ];then
         git checkout stack/dev
     fi
