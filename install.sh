@@ -84,7 +84,11 @@ if [ -e /usr/local/bin/ssr ];then
 	sleep 1s
 	echo "开始部署"
 	cd /usr/local/shadowsocksr
-	git pull 
+	git pull
+    git manyuser
+    if [ $1 == "develop" ];then
+        git checkout stack/dev
+    fi
 fi
 cd /usr/local
 git clone https://github.com/Readour/AR-B-P-B.git
