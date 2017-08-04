@@ -96,6 +96,10 @@ if [ -e /usr/local/bin/ssr ];then
 fi
 cd /usr/local
 git clone https://github.com/Readour/AR-B-P-B.git
+git checkout master
+if [ $1 == "develop" ];then
+    git checkout develop
+fi
 mv AR-B-P-B SSR-Bash-Python
 cd /usr/local/shadowsocksr
 bash initcfg.sh
