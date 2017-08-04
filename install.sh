@@ -72,6 +72,10 @@ ldconfig
 cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
 cd /usr/local
 git clone https://github.com/Readour/shadowsocksr.git
+git manyuser
+if [ $1 == "develop" ];then
+    git checkout stack/dev
+fi
 fi
 
 #Install SSR and SSR-Bash
