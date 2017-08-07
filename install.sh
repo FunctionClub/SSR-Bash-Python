@@ -92,7 +92,7 @@ if [ -e /usr/local/bin/ssr ];then
 	cd /usr/local/shadowsocksr
 	git pull
     git checkout manyuser
-    if [ $1 == "develop" ];then
+    if [[ $1 == "develop" ]];then
         git checkout stack/dev
     fi
 fi
@@ -100,7 +100,7 @@ cd /usr/local
 git clone https://github.com/Readour/AR-B-P-B.git
 cd AR-B-P-B
 git checkout master
-if [ $1 == "develop" ];then
+if [[ $1 == "develop" ]];then
     git checkout develop
 fi
 cd ..
