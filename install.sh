@@ -74,6 +74,7 @@ cd /usr/local
 git clone https://github.com/Readour/shadowsocksr.git
 cd ./shadowsocksr
 git manyuser
+git pull
 if [ $1 == "develop" ];then
     git checkout stack/dev
 fi
@@ -97,7 +98,7 @@ if [ -e /usr/local/bin/ssr ];then
 fi
 cd /usr/local
 git clone https://github.com/Readour/AR-B-P-B.git
-cd ./AR-B-P-B
+cd AR-B-P-B
 git checkout master
 if [ $1 == "develop" ];then
     git checkout develop
