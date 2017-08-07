@@ -34,5 +34,5 @@
 ## 安装或更新到最新开发版(有风险,不建议！) ##
     wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh develop
 
-## 自检 ##
+## 自检（没有卵用😝） ##
     wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/self-check.sh && bash self-check.sh
