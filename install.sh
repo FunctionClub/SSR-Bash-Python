@@ -103,6 +103,7 @@ git checkout master
 if [ $1 == "develop" ];then
     git checkout develop
 fi
+cd ..
 mv AR-B-P-B SSR-Bash-Python
 cd /usr/local/shadowsocksr
 bash initcfg.sh
