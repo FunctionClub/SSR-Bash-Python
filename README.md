@@ -25,13 +25,12 @@
 - 自动安装Libsodium库以支持Chacha20等加密方式
 
 ## 缺点 ##
-- 无法删除最后一名用户（官方限制）
 - 未设置开机启动
 
 ## 安装&更新 ##
     wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh
 
-## 安装或更新到最新开发版(有风险,不建议！) ##
+## 安装或更新到最新开发版(支持新版协议，推荐使用) ##
     wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh develop
 
 ## 自检（没有卵用😝） ##
