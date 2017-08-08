@@ -59,12 +59,12 @@ if [[ $userc == 5 ]];then
 			break	
 		fi
 	done
-	if [[ $lsid == 2 ]];then
+	if [[ $lsid == 1 ]];then
 		read -p "输入用户名： " uid
 		cd /usr/local/shadowsocksr
 		python mujson_mgr.py -l -u $uid
 	fi
-	if [[ $lsid == 3 ]];then
+	if [[ $lsid == 2 ]];then
 		read -p "输入端口号： " uid
 		cd /usr/local/shadowsocksr
 		python mujson_mgr.py -l -p $uid
