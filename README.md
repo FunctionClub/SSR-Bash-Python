@@ -28,7 +28,7 @@
 ## 缺点 ##
 - 未设置开机启动
 
-## 安装或更新到最新开发版(支持新版协议，推荐使用) ##
+## 安装或更新到最新开发版(支持新特性，不推荐小白使用) ##
     wget -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh develop
 
 ## 安装&更新 ##
