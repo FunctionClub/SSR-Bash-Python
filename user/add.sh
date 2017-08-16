@@ -92,7 +92,7 @@ if [[ $ux =~ ^[2,3,4,6,7,8,9]$ ]]; then
 	if [[ ! $ifprotocolcompatible == "y" ]]; then
 		while :; do echo 
 			read -p "请输入连接数限制(建议最少 2个): " uparam
-			if [[ ! $uparam =~ ^[1-9999]$ ]]; then
+			if [[ ! $uparam =~ ^(-?|\+?)[0-9]+(\.?[0-9]+)?$ ]]; then
 				echo "输入错误! 请输入正确的数字!"
 			else
 				break
