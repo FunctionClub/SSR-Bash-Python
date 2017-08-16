@@ -352,6 +352,7 @@ fi
 
 if [[ $ec == 10 ]];then
 	while :; do echo
+		echo "注意：auth_* 系列协议 不兼容原版才有效 "
 		read -p "输入允许的连接数(建议最少 2个)： " uparam
 		if [[ "$uparam" =~ ^[1-9999]$ ]];then
 	   		break
