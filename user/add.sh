@@ -88,7 +88,18 @@ if [[ $ux == 2 ]];then
 	done
 fi
 
-
+if [[ $ux =~ ^[2,3,4,6,7,8,9]$ ]]; then
+	if [[ ! $ifprotocolcompatible == "y" ]]; then
+		while :; do echo 
+			read -p "请输入连接数限制(建议最少 2个): " uparam
+			if [[ ! $uparam =~ ^[1-9999]$ ]]; then
+				echo "输入错误! 请输入正确的数字!"
+			else
+				break
+			fi
+		done
+	fi
+fi
 
 echo "混淆方式"
 echo '1.plain'
@@ -276,4 +287,5 @@ echo "加密方法: $um1"
 echo "协议: $ux1"
 echo "混淆方式: $uo1"
 echo "流量: $ut GB"
+echo "允许连接数: $uparam"
 echo "===================="

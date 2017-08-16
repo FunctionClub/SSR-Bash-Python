@@ -62,10 +62,11 @@ echo "6.修改混淆参数"
 echo "7.修改流量"
 echo "8.修改端口限制"
 echo "9.修改总端口限速"
+echo "10.修改连接数限制"
 
 while :; do echo
 	read -p "请选择： " ec
-	if [[ ! $ec =~ ^[1-9]$ ]]; then
+	if [[ ! $ec =~ ^[1-10]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
@@ -346,5 +347,26 @@ if [[ $ec == 9 ]];then
 		cd /usr/local/shadowsocksr
 		python mujson_mgr.py -e -p $uid -S $us
 		echo "端口号为 $uid 的用户端口限速已修改为 $us KB/s"
+	fi
+fi
+
+if [[ $ec == 10 ]];then
+	while :; do echo
+		read -p "输入允许的连接数(建议最少 2个)： " uparam
+		if [[ "$uparam" =~ ^[1-9999]$ ]];then
+	   		break
+		else
+	   		echo 'Input Error!'
+		fi
+	done
+	if [[ $lsid == 1 ]];then
+		cd /usr/local/shadowsocksr
+		python mujson_mgr.py -e -u $uid -G $uparam
+		echo "用户名为 $uid 的允许的连接数已修改为 $uparam "
+	fi
+	if [[ $lsid == 2 ]];then
+		cd /usr/local/shadowsocksr
+		python mujson_mgr.py -e -p $uid -G $uparam
+		echo "端口号为 $uid 的允许的连接数已修改为 $uparam "
 	fi
 fi
