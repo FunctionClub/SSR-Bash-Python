@@ -66,7 +66,10 @@ echo "10.修改连接数限制"
 
 while :; do echo
 	read -p "请选择： " ec
-	if [[ ! $ec =~ ^[1-10]$ ]]; then
+	if [[ ! $ec =~ ^[1-9]$ ]]; then
+		if [[ $ec == 10 ]]; then
+			break
+		fi
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
@@ -354,7 +357,7 @@ if [[ $ec == 10 ]];then
 	while :; do echo
 		echo "注意：auth_* 系列协议 不兼容原版才有效 "
 		read -p "输入允许的连接数(建议最少 2个)： " uparam
-		if [[ "$uparam" =~ ^[1-9999]$ ]];then
+		if [[ "$uparam" =~ ^(-?|\+?)[0-9]+(\.?[0-9]+)?$ ]];then
 	   		break
 		else
 	   		echo 'Input Error!'
