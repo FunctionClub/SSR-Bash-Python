@@ -60,16 +60,21 @@ if [[ ${OS} == Debian ]];then
     apt-get install build-essential -y
 fi
 #Install Libsodium
-cd $workdir
-export LIBSODIUM_VER=1.0.13
-wget https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-$LIBSODIUM_VER.tar.gz
-tar xvf libsodium-$LIBSODIUM_VER.tar.gz
-pushd libsodium-$LIBSODIUM_VER
-./configure --prefix=/usr && make
-make install
-popd
-ldconfig
-cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
+if [[ ! -e /usr/local/lib/libsodium.so ]];then
+    cd $workdir
+    export LIBSODIUM_VER=1.0.13
+    wget https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-$LIBSODIUM_VER.tar.gz
+    tar xvf libsodium-$LIBSODIUM_VER.tar.gz
+    pushd libsodium-$LIBSODIUM_VER
+    ./configure --prefix=/usr && make
+    make install
+    popd
+    ldconfig
+    cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
+    [[ ! -e /usr/local/lib/libsodium.so ]] && echo "libsodium安装失败 !" && exit 1
+else
+    echo "libsodium已安装!"
+fi
 cd /usr/local
 git clone https://github.com/Readour/shadowsocksr.git
 cd ./shadowsocksr
