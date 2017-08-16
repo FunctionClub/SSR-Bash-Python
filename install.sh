@@ -71,7 +71,7 @@ if [[ ! -e /usr/local/lib/libsodium.so ]];then
     popd
     ldconfig
     cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
-    [[ ! -e /usr/local/lib/libsodium.so ]] && echo "libsodium安装失败 !" && exit 1
+#    [[ ! -e /usr/local/lib/libsodium.so ]] && echo "libsodium安装失败 !" && exit 1
 else
     echo "libsodium已安装!"
 fi
