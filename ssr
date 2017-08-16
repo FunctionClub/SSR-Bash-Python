@@ -3,10 +3,10 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #Check Root
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
-
-echo "欢迎使用 AR (Python Base) "
-
-
+echo "*******************"
+echo ""
+echo "欢迎使用 AR (Python Base) 
+"
 echo "输入数字选择功能："
 echo ""
 echo "1.服务器控制"
@@ -21,6 +21,8 @@ while :; do echo
 	if [[ ! $choice =~ ^[0-6]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
+		echo 
+		echo 
 		break	
 	fi
 done
