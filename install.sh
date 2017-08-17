@@ -36,6 +36,10 @@ workdir=$(pwd)
 
 #Install Basic Tools
 if [ ! -e /usr/local/bin/ssr ];then
+if [[ $1 == "uninstall" ]];then
+	echo "你在开玩笑吗？你都没有安装怎么卸载呀！"
+	exit 1
+fi
 echo "开始部署"
 sleep 2s
 if [[ ${OS} == Ubuntu ]];then
@@ -72,7 +76,10 @@ if [[ ! -e ${libsodiumfile} ]];then
     popd
     ldconfig
     cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
-    [[ ! -e ${libsodiumfile} ]] && echo "libsodium安装失败 !" && exit 1
+    if [[ ! -e ${libsodiumfile} ]];then
+    	echo "libsodium安装失败 !"
+    	exit 1
+    fi
 else
     echo "libsodium已安装!"
 fi
@@ -88,6 +95,21 @@ fi
 
 #Install SSR and SSR-Bash
 if [ -e /usr/local/bin/ssr ];then
+	if [[ $1 == "uninstall" ]];then
+		echo "开始卸载"
+		sleep 1s
+		echo "删除:/usr/local/bin/ssr"
+		rm -f /usr/local/bin/ssr
+		echo "删除:/usr/local/SSR-Bash-Python"
+		rm -rf /usr/local/SSR-Bash-Python
+		echo "删除:/usr/local/shadowsocksr"
+		rm -rf /usr/local/shadowsocksr
+		echo "删除:${PWD}/install.sh"
+		rm -f ${PWD}/install.sh
+		sleep 1s
+		echo "卸载完成!!"
+		exit 0
+	fi
 	echo "开始更新"
 	sleep 1s
 	echo "正在清理老版本"
