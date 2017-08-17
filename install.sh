@@ -60,10 +60,11 @@ if [[ ${OS} == Debian ]];then
     apt-get install build-essential -y
 fi
 #Install Libsodium
-if [[ ! -e /usr/local/lib/libsodium.so ]];then
+libsodiumfile="/usr/local/lib/libsodium.so"
+if [[ ! -e ${libsodiumfile} ]];then
     cd $workdir
     export LIBSODIUM_VER=1.0.13
-    wget https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-$LIBSODIUM_VER.tar.gz
+    wget -q https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-$LIBSODIUM_VER.tar.gz
     tar xvf libsodium-$LIBSODIUM_VER.tar.gz
     pushd libsodium-$LIBSODIUM_VER
     ./configure --prefix=/usr && make
@@ -71,7 +72,7 @@ if [[ ! -e /usr/local/lib/libsodium.so ]];then
     popd
     ldconfig
     cd $workdir && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
-#    [[ ! -e /usr/local/lib/libsodium.so ]] && echo "libsodium安装失败 !" && exit 1
+    [[ ! -e ${libsodiumfile} ]] && echo "libsodium安装失败 !" && exit 1
 else
     echo "libsodium已安装!"
 fi
