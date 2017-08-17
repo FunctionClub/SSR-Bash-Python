@@ -37,6 +37,9 @@ echo "你选择了添加用户"
 echo ""
 read -p "输入用户名： " uname
 uport=`head -200 /dev/urandom | cksum | awk -F" " '{ print $2 }'`
+if [[ $uname == "" ]];then
+	bash /usr/local/SSR-Bash-Python/user.sh || exit 0
+fi
 read -p "输入密码： " upass
 um1="none"
 ux1="auth_chain_a"

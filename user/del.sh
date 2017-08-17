@@ -10,6 +10,9 @@ echo ""
 while :; do echo
 	read -p "请选择： " lsid
 	if [[ ! $lsid =~ ^[1-2]$ ]]; then
+		if [[ $lsid == "" ]]; then
+			bash /usr/local/SSR-Bash-Python/user.sh || exit 0
+		fi
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
