@@ -63,7 +63,7 @@ if [[ ${OS} == Debian ]];then
 	apt-get install python screen curl -y
 	apt-get install python-pip -y
 	apt-get install git -y
-	apt-get unstall bc -y
+	apt-get install bc -y
     apt-get install build-essential -y
 fi
 #Install Libsodium
@@ -138,7 +138,14 @@ cd ..
 mv AR-B-P-B SSR-Bash-Python
 cd /usr/local/shadowsocksr
 bash initcfg.sh
-
+if [[ ! -e /usr/bin/bc ]];then
+	if [[ ${OS} == CentOS ]];then
+		yum install bc -y
+	fi
+	if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
+		apt-get install bc -y
+	fi
+fi
 #Start when boot
 if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
     cat >/etc/init.d/ssr-bash-python <<EOF
