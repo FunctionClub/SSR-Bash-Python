@@ -12,7 +12,7 @@ updateme(){
 	version2=`cat /usr/local/SSR-Bash-Python/version.txt`
 	if [[ "$version1" == "$version2" ]];then
 		echo "你当前已是最新版"
-		slleep 2s
+		sleep 2s
 		ssr
 	else
 		echo "当前最新版本为$version1,输入y进行更新，其它按键退出"
@@ -32,7 +32,7 @@ sumdc(){
 	sum1=`cat /proc/sys/kernel/random/uuid| cksum | cut -f1 -d" "|head -c 2`
 	sum2=`cat /proc/sys/kernel/random/uuid| cksum | cut -f1 -d" "|head -c 1`
 	solve=`echo "$sum1-$sum2"|bc`
-	echo -e "请输入\e[32;49m $sum1-$sum2 的运算结果,表示你已经确认,输入错误将退出"
+	echo -e "请输入\e[32;49m $sum1-$sum2 \e[0m的运算结果,表示你已经确认,输入错误将退出"
 	read sv
 }
 
