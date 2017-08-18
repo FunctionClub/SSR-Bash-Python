@@ -13,7 +13,7 @@ echo "1.服务器控制"
 echo "2.用户管理"
 echo "3.全局流量管理"
 echo "4.实验性功能"
-echo "5.程序自检"
+echo "5.程序管理"
 echo "6.一键添加用户(使用最优配置)"
 echo "0.退出程序"
 while :; do echo
@@ -48,7 +48,7 @@ if [[ $choice == 4 ]];then
 fi
 
 if [[ $choice == 5 ]];then
-	bash /usr/local/SSR-Bash-Python/self-check.sh
+	bash /usr/local/SSR-Bash-Python/self.sh
 fi
 
 if [[ $choice == 6 ]];then
