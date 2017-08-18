@@ -7,6 +7,9 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #Main
 updateme(){
 	cd ~
+	if [[ -e ~/version.txt ]];then
+		rm -f ~/version.txt
+	fi
 	wget -q https://raw.githubusercontent.com/Readour/AR-B-P-B/master/version.txt
 	version1=`cat ~/version.txt`
 	version2=`cat /usr/local/SSR-Bash-Python/version.txt`
