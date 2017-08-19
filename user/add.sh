@@ -262,11 +262,20 @@ echo "用户添加成功！用户信息如下："
 cd /usr/local/shadowsocksr
 
 if [[ $iflimitspeed == y ]]; then
-	python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut -S $us -G $uparam
+	if [[ ! "$uparam" == "" ]]; then
+		python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut -S $us -G $uparam
+	else
+		python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut -S $us
+		uparam="无限"
+	fi
 else
-	python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut -G $uparam
+	if [[ ! "$uparam" == "" ]]; then
+		python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut -G $uparam
+	else
+		python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut
+		uparam="无限"
+	fi
 fi
-
 
 SSRPID=$(ps -ef|grep 'python server.py m' |grep -v grep |awk '{print $2}')
 if [[ $SSRPID == "" ]]; then
