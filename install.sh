@@ -226,12 +226,15 @@ if [[ $1 == develop ]];then
     else
         read -t 10 -p "是否设置服务器自检，实验型功能！[Y/N]" yn
         if [[ $yn == [yY] ]];then
-        cd /usr/local/SSR-Bash-Python
-        bash servercheck.sh conf
-        nohup bash servercheck.sh run
-        PID=$(ps -ef |grep -v grep | grep "bash" | grep "servercheck.sh" | grep "run" | awk '{print $2}')
-        if [[ -z ${PID} ]];then
-            echo "程序启动失败,请联系作者"
+        	cd /usr/local/SSR-Bash-Python
+        	bash servercheck.sh conf
+        	nohup bash servercheck.sh run
+        	PID=$(ps -ef |grep -v grep | grep "bash" | grep "servercheck.sh" | grep "run" | awk '{print $2}')
+        	if [[ -z ${PID} ]];then
+            	echo "程序启动失败,请联系作者"
+            fi
+        else
+        	echo "你居然拒绝了T.T"
         fi
     fi
 fi
