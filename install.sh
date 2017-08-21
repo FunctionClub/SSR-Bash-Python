@@ -228,7 +228,7 @@ if [[ $1 == develop ]];then
         if [[ $yn == [yY] ]];then
         	cd /usr/local/SSR-Bash-Python
         	bash servercheck.sh conf
-        	nohup bash servercheck.sh run
+        	nohup bash servercheck.sh run &
         	PID=$(ps -ef |grep -v grep | grep "bash" | grep "servercheck.sh" | grep "run" | awk '{print $2}')
         	if [[ -z ${PID} ]];then
             	echo "程序启动失败,请联系作者"
