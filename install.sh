@@ -222,7 +222,7 @@ if [[ $1 == develop ]];then
     if [[ -e /usr/local/SSR-Bash-Python/check.log ]];then
         cd /usr/local/SSR-Bash-Python
         bash servercheck.sh stop
-        nohup bash servercheck.sh run
+        nohup bash servercheck.sh run &
     else
         read -t 10 -p "是否设置服务器自检，实验型功能！[Y/N]" yn
         if [[ $yn == [yY] ]];then
