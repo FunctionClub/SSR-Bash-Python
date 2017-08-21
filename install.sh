@@ -208,7 +208,7 @@ systemctl enable iptables.service
 fi
 
 #Install SSR-Bash Background
-wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/readour/AR-B-P-B/master/ssr
+wget -q -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/readour/AR-B-P-B/master/ssr
 chmod +x /usr/local/bin/ssr
 
 #Modify ShadowsocksR API
@@ -216,8 +216,25 @@ sed -i "s/sspanelv2/mudbjson/g" /usr/local/shadowsocksr/userapiconfig.py
 sed -i "s/UPDATE_TIME = 60/UPDATE_TIME = 10/g" /usr/local/shadowsocksr/userapiconfig.py
 sed -i "s/SERVER_PUB_ADDR = '127.0.0.1'/SERVER_PUB_ADDR = '$(wget -qO- -t1 -T2 ipinfo.io/ip)'/" /usr/local/shadowsocksr/userapiconfig.py
 #INstall Success
-read -p "输入与您主机绑定的域名: " ipname
+read -t 15 -p "输入与您主机绑定的域名(请在15秒内输入，超时将跳过本步骤): " ipname
 echo "$ipname" > /usr/local/shadowsocksr/myip.txt
+if [[ $1 == develop ]];then
+    if [[ -e /usr/local/SSR-Bash-Python/check.log ]];then
+        cd /usr/local/SSR-Bash-Python
+        bash servercheck.sh stop
+        nohup bash servercheck.sh run
+    else
+        read -t 10 -p "是否设置服务器自检，实验型功能！[Y/N]" yn
+        if [[ $yn == [yY] ]];then
+        cd /usr/local/SSR-Bash-Python
+        bash servercheck.sh conf
+        nohup bash servercheck.sh run
+        PID=$(ps -ef |grep -v grep | grep "bash" | grep "servercheck.sh" | grep "run" | awk '{print $2}')
+        if [[ -z ${PID} ]];then
+            echo "程序启动失败,请联系作者"
+        fi
+    fi
+fi
 bash /usr/local/SSR-Bash-Python/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
 echo '原作者已经停止本脚本服务，此版本为2017.7.30号的备份（带最新端口限速）'
