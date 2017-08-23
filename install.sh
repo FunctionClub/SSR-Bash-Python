@@ -218,8 +218,13 @@ systemctl enable iptables.service
 fi
 
 #Install SSR-Bash Background
-wget -q -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/readour/AR-B-P-B/master/ssr
-chmod +x /usr/local/bin/ssr
+if [[ $1 == "develop" ]];then
+	wget -q -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/readour/AR-B-P-B/develop/ssr
+	chmod +x /usr/local/bin/ssr
+else
+	wget -q -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/readour/AR-B-P-B/master/ssr
+	chmod +x /usr/local/bin/ssr
+fi
 
 #Modify ShadowsocksR API
 sed -i "s/sspanelv2/mudbjson/g" /usr/local/shadowsocksr/userapiconfig.py
