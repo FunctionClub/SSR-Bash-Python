@@ -118,7 +118,6 @@ if [ -e /usr/local/bin/ssr ];then
 	sleep 1s
 	echo "正在清理老版本"
 	rm -f /usr/local/bin/ssr
-	rm -rf /usr/local/SSR-Bash-Python
 	sleep 1s
 	echo "开始部署"
 	cd /usr/local/shadowsocksr
@@ -128,15 +127,25 @@ if [ -e /usr/local/bin/ssr ];then
         git checkout stack/dev
     fi
 fi
-cd /usr/local
-git clone https://github.com/Readour/AR-B-P-B.git
-cd AR-B-P-B
-git checkout master
-if [[ $1 == "develop" ]];then
-    git checkout develop
+if [[ -d /usr/local/SSR-Bash-Python ]];then
+    cd /usr/local/SSR-Bash-Python
+    git checkout master
+    git pull
+    if [[ $1 == "develop" ]];then
+        git checkout develop
+        git pull
+    fi
+else
+    cd /usr/local
+    git clone https://github.com/Readour/AR-B-P-B.git
+    cd AR-B-P-B
+    git checkout master
+    if [[ $1 == "develop" ]];then
+        git checkout develop
+    fi
+    cd ..
+    mv AR-B-P-B SSR-Bash-Python
 fi
-cd ..
-mv AR-B-P-B SSR-Bash-Python
 cd /usr/local/shadowsocksr
 bash initcfg.sh
 if [[ ! -e /usr/bin/bc ]];then
