@@ -242,14 +242,14 @@ if [[ $1 == develop ]];then
         	bash servercheck.sh run &
         else
         	bash servercheck.sh stop
-        	nohup bash servercheck.sh run &
+        	nohup bash servercheck.sh run 2>/dev/null &
         fi
     else
         read -t 10 -p "是否设置服务器自检，实验型功能！[Y/N]" yn
         if [[ $yn == [yY] ]];then
         	cd /usr/local/SSR-Bash-Python
         	bash servercheck.sh conf
-        	nohup bash servercheck.sh run &
+        	nohup bash servercheck.sh run 2>/dev/null &
         	PID=$(ps -ef |grep -v grep | grep "bash" | grep "servercheck.sh" | grep "run" | awk '{print $2}')
         	if [[ -z ${PID} ]];then
             	echo "程序启动失败,请联系作者"
@@ -261,8 +261,8 @@ if [[ $1 == develop ]];then
 fi
 bash /usr/local/SSR-Bash-Python/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
-echo '原作者已经停止本脚本服务，此版本为2017.7.30号的备份（带最新端口限速）'
-echo '还好在作者删服务前备份了'
+echo '原作者已经停止本脚本更新，此版本为作者删除项目前最后一个版本魔改而来'
+echo '不喜勿喷!'
 echo '谨慎使用！仅供研究！'
 echo '谨慎使用！仅供研究！'
 echo '谨慎使用！仅供研究！'
