@@ -30,6 +30,12 @@
 - 傻瓜式的BBR、锐速、LotServer一键构建（有风险，仅开发版可用）
 - 可自定义的服务器巡检，故障自动重启服务，确保链接稳定有效
 
+不如看图:
+![](https://github.com/zyh001/zyh001.github.com/raw/master/images/now1.png) ![](https://github.com/zyh001/zyh001.github.com/blob/master/images/now2.png)
+
+未来可能的交互界面（吊下胃口）：
+![](https://github.com/zyh001/zyh001.github.com/blob/master/images/future.png)
+
 ## 缺点 ##
 - 默认未设置开机启动
 
