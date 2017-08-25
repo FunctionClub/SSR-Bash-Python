@@ -239,10 +239,11 @@ if [[ $1 == develop ]];then
         read -n 1 -t 3 -p "你是否想要重新配置服务器巡检配置（注意，这将会清空你的日志）[Y/N]" yn
         if [[ $yn == [Yy] ]];then
         	bash servercheck.sh reconf
-        	bash servercheck.sh run &
+        	nohup bash servercheck.sh run 2>/dev/null &
         else
         	bash servercheck.sh stop
         	nohup bash servercheck.sh run 2>/dev/null &
+            echo "服务已重启"
         fi
     else
         read -t 10 -p "是否设置服务器自检，实验型功能！[Y/N]" yn
