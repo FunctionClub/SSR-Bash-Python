@@ -114,8 +114,10 @@ if [ -e /usr/local/bin/ssr ];then
 		echo "卸载完成!!"
 		exit 0
 	fi
-    echo "你是否为其它版本迁移而来？（Y/N）"
-    read -t 2 -n 1 yn
+    if [[ ! $yn == n ]];then
+        echo "你是否为其它版本迁移而来？（Y/N）"
+        read -t 2 -n 1 yn
+    fi
     if [[ ${yn} == [yY] ]];then
         mv /usr/local/shadowsocksr/mudb.json /usr/local/mudb.json
         rm -rf /usr/local/shadowsocksr
