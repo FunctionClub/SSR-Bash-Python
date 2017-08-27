@@ -123,7 +123,7 @@ if [ -e /usr/local/bin/ssr ];then
         git clone https://github.com/Readour/shadowsocksr.git
         if [[ $1 == develop ]];then
             cd ./shadowsocksr
-            git checkout develop
+            git checkout stack/dev
             rm -f ./mudb.json
             mv ../mudb.json ./mudb.json
         else
