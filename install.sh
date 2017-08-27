@@ -90,7 +90,7 @@ fi
 cd /usr/local
 git clone https://github.com/Readour/shadowsocksr.git
 cd ./shadowsocksr
-git manyuser
+git checkout manyuser
 git pull
 if [ $1 == "develop" ];then
     git checkout stack/dev
@@ -114,6 +114,23 @@ if [ -e /usr/local/bin/ssr ];then
 		echo "卸载完成!!"
 		exit 0
 	fi
+    echo "你是否为其它版本迁移而来？（Y/N）"
+    read -t 2 -n 1 yn
+    if [[ ${yn} == [yY] ]];then
+        mv /usr/local/shadowsocksr/mudb.json /usr/local/mudb.json
+        rm -rf /usr/local/shadowsocksr
+        cd /usr/local
+        git clone https://github.com/Readour/shadowsocksr.git
+        if [[ $1 == develop ]];then
+            cd ./shadowsocksr
+            git checkout develop
+            rm -f ./mudb.json
+            mv ../mudb.json ./mudb.json
+        else
+            rm -f ./shadowsocksr/mudb.json
+            mv /usr/local/mudb.json /usr/local/shadowsocksr/mudb.json
+        fi
+    fi
 	echo "开始更新"
 	sleep 1s
 	echo "正在清理老版本"
@@ -128,6 +145,12 @@ if [ -e /usr/local/bin/ssr ];then
     fi
 fi
 if [[ -d /usr/local/SSR-Bash-Python ]];then
+    if [[ $yn == [yY] ]];then
+        rm -rf /usr/local/SSR-Bash-Python
+        cd /usr/local
+        git clone https://github.com/Readour/AR-B-P-B.git
+        mv AR-B-P-B SSR-Bash-Python
+    fi
     cd /usr/local/SSR-Bash-Python
     git checkout master
     git pull
