@@ -21,6 +21,7 @@ updateme(){
 		echo "当前最新版本为$version1,输入y进行更新，其它按键退出"
 		read -n 1 yn
 		if [[ $yn == [Yy] ]];then
+			export yn=n
 			wget -q -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh
 			sleep 3s
 			clear
