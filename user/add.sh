@@ -277,13 +277,11 @@ else
 	fi
 fi
 
-SSRPID=$(ps -ef|grep 'python server.py m' |grep -v grep |awk '{print $2}')
-if [[ $SSRPID == "" ]]; then
-	
+SSRPID=$(ps -ef | grep 'server.py m' | grep -v grep | awk '{print $2}')
+if [[ -z ${SSRPID} ]];then 
 	if [[ ${OS} =~ ^Ubuntu$|^Debian$ ]];then
 		iptables-restore < /etc/iptables.up.rules
 	fi
-
     bash /usr/local/shadowsocksr/logrun.sh
 	echo "ShadowsocksR服务器已启动"
 fi
