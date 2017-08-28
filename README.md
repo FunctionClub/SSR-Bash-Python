@@ -1,7 +1,7 @@
 # SSR多用户管理脚本（基于官方mujson版本）
 - [x] 稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B)
 
-- [ ] 开发版V1.8.9：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
+- [x] 开发版V1.8.9：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
 
 ## 介绍 ##
 
