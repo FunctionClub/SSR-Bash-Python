@@ -1,7 +1,7 @@
 # SSR多用户管理脚本（基于官方mujson版本）
 - [x] 稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B)
 
-- [x] 开发版V1.8.9：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
+- [x] 开发版V1.9.0：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
 
 ## 介绍 ##
 
@@ -44,7 +44,7 @@
 ## 缺点 ##
 - 默认未设置开机启动
 
-## 安装或更新到最新开发版(支持新特性，不推荐小白使用) ##
+## 安装或更新到最新开发版(支持新特性，推荐使用) ##
     wget -q -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh develop
 
 ## 安装&更新 ##
