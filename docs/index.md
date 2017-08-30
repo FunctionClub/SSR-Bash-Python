@@ -1,7 +1,7 @@
 # SSR多用户管理脚本（基于官方mujson版本）
-- [x] 稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B)
+稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B)
 
-- [x] 开发版V1.9.0：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
+开发版V1.9.0：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
 
 ## 介绍 ##
 
@@ -36,10 +36,10 @@
 
 不如看图:
 
-![](https://github.com/zyh001/zyh001.github.com/raw/master/images/now1.png) ![](https://github.com/zyh001/zyh001.github.com/blob/master/images/now2.png)
+![](https://github.com/zyh001/zyh001.github.com/raw/master/images/now1.png) ![](https://github.com/zyh001/zyh001.github.com/raw/master/images/now2.png)
 
 未来可能的交互界面（吊下胃口）：
-![](https://github.com/zyh001/zyh001.github.com/blob/master/images/future.png)
+![](https://github.com/zyh001/zyh001.github.com/raw/master/images/future.png)
 
 ## 缺点 ##
 - 默认未设置开机启动
@@ -68,4 +68,3 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-
