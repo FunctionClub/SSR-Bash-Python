@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR-B-P-B常用问答界面</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/zzsc.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body><div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+  <h1><strong>AR-B-P-B 常见问题</strong></h1>
+</div>
+
+<div class="container">
+	  <dl>
+		<dt>我该如何安装这个脚本？</dt>
+		<dd>
+		  <p>在本项目的<a href="https://github.com/Readour/AR-B-P-B">GitHub</a>主页中提供了安装命令，你只需要选择你需要安装的版本（标准版/开发版），之后使用ssh登录到你的服务器执行对应的指令，然后根据提示操作就行，没有任何难度！</p>
+		</dd>
+		<dt>标准版和开发版有什么区别？</dt>
+		<dd>
+		  <p>标准版的优化较少，基本上为“雨落”大神的原版，没有做太多修改，也较为完善；开发版即为我的魔改版，功能较多，推荐使用，但是由于开发周期比较短，可能难免会出现漏洞，欢迎反馈到<a href="mailto:stackzhao@gmail.com">stackzhao@gmail.com</a>或者报告信息到官方<a href="https://github.com/Readour/AR-B-P-B/issues">issues</a>里，我将迅速修复！</p>
+		<p>当然，如果你安装了开发版之后就后悔了，脚本内给了你吃后悔药的机会，只需要在程序里进入 <em>程序管理->切换到普通版 </em> 同样的如果想从标准版升级到开发版也是如此！</p>
+		</dd>
+		<dt>我是否可以通过原版升级到你的版本呢？</dt>
+		<dd>
+		  <p>答案当然是可以的，而且可以为你保留你之前的用户数据，同样很简单，你只需要使用本项目的<a href="https://github.com/Readour/AR-B-P-B">GitHub</a>主页中提供的安装命令，安装即可，需要注意的是，当安装脚本询问你“是否从其它版本迁移而来”时，迅速按下Y键，否则，可能会安装失败。不过安装失败了也不要紧，回过头来，重新来过就是.</p>
+		</dd>
+		<dt>我的这台主机到期了，我要怎样迅速迁移到另外一台主机呢？</dt>
+		<dd>
+		  <p>哈。我考虑到了，你只需要在程序里进入<em> 程序管理->备份配置 </em>对数据进行备份，然后使用WinScp工具，连接到你的服务器，进入/root/backup中，将里面的ssrconf.tar.gz文件复制到你的电脑上，用同样的方法再将其复制到另一台主机的/root/backup文件夹里（如果不存在，可以建立该文件夹），然后通过常规的方法安装到开发版，再在程序里进入<em> 程序管理->还原配置 </em>，按默认还原就行，防火墙全部为你搞定。</p>
+		  <p>当然此功能也不是只为了此，没事备份一下，防止意外！！</p>
+		</dd>
+		<dt>我能不能让ShadowsocksR在出问题时自动重启呢？</dt>
+        <dd>
+        <p>可以的，你只需要在安装的时候设置了“服务器自动巡检”功能，错过了？没关系，你可以在<em> 服务器控制->服务器自动巡检系统 </em>中重新配置后再启动服务就行。</p>
+        </dd>
+        <dt>我能不能使用此脚本配置单端口多用户？</dt>
+        <dd>
+        <p>这个是不能的哦，因为你一旦配置了单端口多用户，那么现在的多端口多用户脚本将会没有任何卵用，真的想这样的话，你可以参照<a href="https://breakwa11.blogspot.jp/2017/01/shadowsocksr-mu.html">破娃的博客</a>进行配置（什么？上不去？麻烦先挂下代理好吧）</p>
+        </dd>
+        <dt>写在最后！</dt>
+        <dd>
+        <p>请仔细阅读本项目的<a href="https://github.com/Readour/AR-B-P-B/blob/master/README.md">github</a>主页，它足矣解决你的大多数问题。还有，不管任何时候，Google都是最好的老师，善用搜索引擎，如果搜索引擎无法解决你的问题，欢迎发邮件到<a href="mailto:stackzhao@gmail.com">stackzhao@gmail.com</a>中，如果不知道怎么提问，请先阅读：<a href="http://u.bobiji.com/tiwen"><strong>提问的智慧</strong></a>再发邮件，任何本文档提到的问题以及官方主页可以解决的问题一概不予回复！请谅解！！</p>
+        </dd>
+	  </dl>
+</div>
+
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	(function(){
+
+	  $('dd').filter(':nth-child(n+4)').addClass('hide');
+
+	  $('dl').on('click', 'dt', function() {
+		  $(this).next().slideToggle(200);
+		});
+	  
+	 })();
+</script>
+
+</body>
+</html>

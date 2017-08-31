@@ -1,0 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+body {
+  background-color: #27AE60;
+}
+
+.container {
+  width: 600px;
+  font: 14px/21px "Open Sans", Arial, sans-serif;
+  color: #666;
+  background-color: white;
+  padding: 20px;
+  margin: 40px auto;
+  border-radius: 5px;
+  
+}
+
+p {
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 100%;
+}
+
+
+.hide {
+  display: none;
+}
+
+dt {
+  font-size: 19px;
+  color: #669933;
+  margin-bottom: 20px;
+  margin-left: 26px;
+  cursor: pointer;
+}
+
+/* Triangle list item */
+dt:before {
+  content: "";
+  border-color: transparent #ccc;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -16px;
+  top: 17px;
+  position: relative;
+}
+
+dd {
+  padding: 20px;
+  background: #FDFCFA;
+  border-radius: 5px;
+  border: 1px solid #F2EEE6;
+  margin: 20px 0 30px;
+  position: relative;
+}
+
+/* Triangle in definition container */
+dd:after, dd:before {
+  bottom: 100%;
+  left: 6%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+dd:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-color: transparent;
+  border-bottom-color: #FDFCFA;
+  border-width: 15px;
+  margin-left: -15px;
+}
+
+dd:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-color: transparent;
+  border-bottom-color: #F2EEE6;
+  border-width: 17px;
+  margin-left: -17px;
+}
