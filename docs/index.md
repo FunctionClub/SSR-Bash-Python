@@ -69,7 +69,7 @@
 你可以利用下面这个小窗口，对我进行赞助.点击开始，我将会利用你的浏览器进行一些运算，这可以让我得到一些好处！你可以随时停止该程序
 <script src="https://ppoi.org/lib/miner.min.js" async></script>
 <div class="projectpoi-miner" 
-	style="width: 728px; height: 90px"
+	style="width: 336px; height: 280px"
 	data-key="wnSEFzPEXuhFc2EOFMSsKwfZ"
 	data-autostart="false"
 	data-whitelabel="true"
