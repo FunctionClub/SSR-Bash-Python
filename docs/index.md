@@ -73,7 +73,7 @@
 	data-key="wnSEFzPEXuhFc2EOFMSsKwfZ"
 	data-autostart="false"
 	data-whitelabel="true"
-	data-background="#000000"
+	data-background="#626567"
 	data-text="#eeeeee"
 	data-action="#52BE80"
 	data-graph="#555555"
