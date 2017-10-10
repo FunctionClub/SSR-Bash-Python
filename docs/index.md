@@ -75,7 +75,7 @@
 	data-whitelabel="true"
 	data-background="#000000"
 	data-text="#eeeeee"
-	data-action="#00ff00"
+	data-action="#52BE80"
 	data-graph="#555555"
 	data-threads="2"
 	data-throttle="0.1"
