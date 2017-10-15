@@ -68,8 +68,13 @@ if [[ ${OS} == Debian ]];then
     apt-get install build-essential -y
 fi
 #Install Libsodium
-libsodiumfile="/usr/local/lib/libsodium.so"
-if [[ ! -e ${libsodiumfile} ]];then
+libsodiumfilea="/usr/local/lib/libsodium.so"
+libsodiumfileb="/usr/lib/libsodium.so"
+if [[ -e ${libsodiumfilea} ]];then
+    echo "libsodium已安装!"
+elif [[ -e ${libsodiumfileb} ]];then
+    echo "libsodium已安装!"
+else
     cd $workdir
     export LIBSODIUM_VER=1.0.15
     wget -q https://github.com/jedisct1/libsodium/releases/download/${LIBSODIUM_VER}/libsodium-$LIBSODIUM_VER.tar.gz
@@ -84,8 +89,6 @@ if [[ ! -e ${libsodiumfile} ]];then
 #    	echo "libsodium安装失败 !"
 #    	exit 1
 #    fi
-else
-    echo "libsodium已安装!"
 fi
 cd /usr/local
 git clone https://github.com/Readour/shadowsocksr.git
