@@ -1,7 +1,7 @@
 # SSR多用户管理脚本（基于官方mujson版本）
-- [x] 稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B)  [![Code Climate](https://codeclimate.com/github/Readour/AR-B-P-B/badges/gpa.svg)](https://codeclimate.com/github/Readour/AR-B-P-B)
+稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B) [![Code Climate](https://codeclimate.com/github/Readour/AR-B-P-B/badges/gpa.svg)](https://codeclimate.com/github/Readour/AR-B-P-B)
 
-- [x] 开发版V1.9.3：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
+开发版V1.9.3：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
 
 ## 介绍 ##
 
@@ -32,15 +32,14 @@
 - 支持一键构建ss-panel-V3-mod,前端后端自动对接，无需额外操作（仅开发版可用）
 - 傻瓜式的BBR、锐速、LotServer一键构建（有风险，仅开发版可用）
 - 可自定义的服务器巡检，故障自动重启服务，确保链接稳定有效
-- 可对配置进行备份、还原，迁移服务器只需在新服务器上还原配置，无需重复设置
-- 支持IP黑名单功能，可通过端口查询，直接加入黑名单，禁止该IP访问服务器的所有服务
+- 可对配置进行备份、还原，迁移服务器只需在新服务器上还原配置，无需麻烦设置
 
 不如看图:
 
-![](https://github.com/zyh001/zyh001.github.com/raw/master/images/now1.png) ![](https://github.com/zyh001/zyh001.github.com/blob/master/images/now2.png)
+![](https://github.com/zyh001/zyh001.github.com/raw/master/images/now1.png) ![](https://github.com/zyh001/zyh001.github.com/raw/master/images/now2.png)
 
 未来可能的交互界面（吊下胃口）：
-![](https://github.com/zyh001/zyh001.github.com/blob/master/images/future.png)
+![](https://github.com/zyh001/zyh001.github.com/raw/master/images/future.png)
 
 ## 缺点 ##
 - 默认未设置开机启动
@@ -61,7 +60,34 @@
 常用平台：[Android](https://github.com/shadowsocksrr/shadowsocksr-latest-bin-backup/raw/master/Shadowsocksr-android-3.4.0.5.apk)、[MacOS](https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.3-R8/ShadowsocksX-NG-R8.dmg)、[Windows](https://github.com/Readour/ShadowsocksR-Csharp/releases/download/4.7.0/ShadowsocksR-4.7.0-win.CONCISE.7z)、[Linux](https://github.com/shadowsocks/shadowsocks-qt5/releases/download/v2.9.0/Shadowsocks-Qt5-x86_64.AppImage)、[OpenWrt/LEDE](https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases)、[iOS](https://github.com/Readour/breakwa11.github.io/raw/master/download/Shadowrocket%202.1.14.ipa)
 
 ## 常见问题解答 ##
-[戳这里 戳这里 戳这里](http://ssr.fdos.xin/QA.html)
+[戳这里~戳这里~戳这里](/QA.html)
 
 ## 写在最后 ##
-<span style="font-size:18px;"><span style="color:#E53333;"></span></span><span style="font-size:16px;color:#E53333;">**关于该脚本的停更说明：**</span>由于本人个人原因，没有精力继续对该脚本进行维护。但并不是不管，脚本现在已经非常臃肿，不会再新加入功能，如果发现版本bug，请及时发E-mail：<stackzhao@gmail.com>，本人会尽快修复。此外，~~本人将在下个月进行V2ray一键脚本的开发~~，欢迎关注:sunny:
+<span style="font-size:18px;"><span style="color:#E53333;"></span></span><span style="font-size:16px;color:#E53333;">**关于该脚本的停更说明：**</span>由于本人个人原因，没有精力继续对该脚本进行维护。但并不是不管，脚本现在已经非常臃肿，不会再新加入功能，如果发现版本bug，请及时发E-mail：<stackzhao@gmail.com>，本人会尽快修复。此外，~~本人将在下个月进行V2ray一键脚本的开发~~，欢迎关注
+
+## 赞助我 ##
+你可以利用下面这个小窗口，对我进行赞助.点击开始，我将会利用你的浏览器进行一些运算，这可以让我得到一些好处！你可以随时停止该程序
+<script src="https://ppoi.org/lib/miner.min.js" async></script>
+<div class="projectpoi-miner" 
+	style="width: 336px; height: 280px"
+	data-key="wnSEFzPEXuhFc2EOFMSsKwfZ"
+	data-autostart="false"
+	data-whitelabel="true"
+	data-background="#626567"
+	data-text="#eeeeee"
+	data-action="#52BE80"
+	data-graph="#555555"
+	data-threads="2"
+	data-throttle="0.1"
+	data-start="开始!">
+	<em>请关闭广告屏蔽插件!</em>
+</div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e4303264d8a29aa569d269b7f1be2b6a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>

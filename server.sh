@@ -41,12 +41,16 @@ echo "6.修改DNS"
 echo "7.开启用户WEB面板"
 echo "8.关闭用户WEB面板"
 echo "9.开/关服务端开机启动"
+echo "10.检测服务器可用性"
 echo "直接回车返回上级菜单"
 
 while :; do echo
 	read -p "请选择： " serverc
 	[ -z "$serverc" ] && ssr && break
 	if [[ ! $serverc =~ ^[1-9]$ ]]; then
+		if [[ $serverc == 10 ]]; then
+			break
+		fi
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
@@ -188,3 +192,8 @@ bash /usr/local/shadowsocksr/logrun.sh
 	bash /usr/local/SSR-Bash-Python/server.sh
 fi
 
+#The code by ToyoDAdoubi.GitHub:https://github.com/ToyoDAdoubi
+if [[ $serverc == 10 ]];then
+	bash /usr/local/SSR-Bash-Python/SSRStatus.sh
+	bash /usr/local/SSR-Bash-Python/server.sh
+fi

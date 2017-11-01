@@ -1,4 +1,4 @@
 language: bash
 
 install:
-  - sudo bash install_test.sh
+  - sudo bash install.sh develop
