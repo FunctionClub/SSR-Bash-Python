@@ -259,7 +259,7 @@ sed -i "s/sspanelv2/mudbjson/g" /usr/local/shadowsocksr/userapiconfig.py
 sed -i "s/UPDATE_TIME = 60/UPDATE_TIME = 10/g" /usr/local/shadowsocksr/userapiconfig.py
 sed -i "s/SERVER_PUB_ADDR = '127.0.0.1'/SERVER_PUB_ADDR = '$(wget -qO- -t1 -T2 ipinfo.io/ip)'/" /usr/local/shadowsocksr/userapiconfig.py
 #INstall Success
-read -t 15 -p "输入与您主机绑定的域名(请在15秒内输入，超时将跳过本步骤): " ipname
+read -t 20 -p "输入与您主机绑定的域名(请在20秒内输入，超时将跳过本步骤): " ipname
 echo "$ipname" > /usr/local/shadowsocksr/myip.txt
 if [[ $1 == develop ]];then
     if [[ -e /usr/local/SSR-Bash-Python/check.log ]];then
@@ -287,6 +287,15 @@ if [[ $1 == develop ]];then
         	echo "你居然拒绝了T.T"
         fi
     fi
+fi
+if [[ -e /etc/sysconfig/iptables-config ]];then
+        ipconf=$(cat /etc/sysconfig/iptables-config | grep 'IPTABLES_MODULES_UNLOAD="no"')
+        if [[ -z ${ipconf} ]];then
+                sed -i 's/IPTABLES_MODULES_UNLOAD="yes"/IPTABLES_MODULES_UNLOAD="no"/g' /etc/sysconfig/iptables-config
+                echo "安装完成，准备重启"
+                sleep 3s
+                reboot
+        fi
 fi
 bash /usr/local/SSR-Bash-Python/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
