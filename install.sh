@@ -1,5 +1,16 @@
 #!/bin/bash
-export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+#Set PATH
+unset check
+for i in `echo $PATH | sed 's/:/\n/g'`
+do
+        if [[ ${i} == "/usr/local/bin" ]];then
+                check="yes"
+        fi
+done
+if [[ -z ${check} ]];then
+        echo "export PATH=${PATH}:/usr/local/bin" >> ~/.bashrc
+        . ~/.bashrc
+fi
 
 #Check Root
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
