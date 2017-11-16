@@ -310,6 +310,9 @@ if [[ -e /etc/sysconfig/iptables-config ]];then
 fi
 bash /usr/local/SSR-Bash-Python/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
+if [[ ${check} != "yes" ]] ;then
+        echo "如果你执行 ssr 提示找不到命令，请尝试退出并重新登录来解决"
+fi
 echo '原作者已经停止本脚本更新，此版本为作者删除项目前最后一个版本魔改而来'
 echo '不喜勿喷!'
 echo '谨慎使用！仅供研究！'
