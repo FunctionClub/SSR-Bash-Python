@@ -78,6 +78,10 @@ if [[ ${OS} == Debian ]];then
 	apt-get -y install bc vnstat
     apt-get install build-essential -y
 fi
+if [[ $? != 0 ]];then
+    echo "安装失败，请稍候重试！"
+    exit 1 
+fi
 #Install Libsodium
 libsodiumfilea="/usr/local/lib/libsodium.so"
 libsodiumfileb="/usr/lib/libsodium.so"
