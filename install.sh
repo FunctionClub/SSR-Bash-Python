@@ -42,7 +42,7 @@ else
 fi
 
 StopInstall(){
-    echo "安装中断,开始清理文件!"
+    echo -e "\n安装中断,开始清理文件!"
     sleep 1s
     rm -rf /usr/local/bin/ssr
     rm -rf /usr/local/SSR-Bash-Python
