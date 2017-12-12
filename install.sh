@@ -41,6 +41,27 @@ else
     kill -9 $$
 fi
 
+StopInstall(){
+    echo "安装中断,开始清理文件!"
+    sleep 1s
+    rm -rf /usr/local/bin/ssr
+    rm -rf /usr/local/SSR-Bash-Python
+    rm -rf /usr/local/shadowsocksr
+    rm -rf ${PWD}/libsodium*
+    rm -rf /etc/init.d/ssr-bash-python
+    rm -rf /usr/local/AR-B-P-B
+    if [[ ${OS} == CentOS  ]];then
+        sed -n -i 's#/etc/init.d/ssr-bash-python#d' /etc/rc.d/rc.local
+    fi
+    if [[ ${OS} == CentOS && ${CentOS_RHEL_version} == 7  ]];then
+        systemctl stop iptables.service
+        systemctl restart firewalld.service
+        systemctl disable iptables.service
+        systemctl enable firewalld.service
+    fi
+    rm -rf $0
+    echo "清理完成!"
+}
 
 #Get Current Directory
 workdir=$(pwd)
@@ -52,6 +73,7 @@ if [[ $1 == "uninstall" ]];then
 	exit 1
 fi
 echo "开始部署"
+trap 'StopInstall 2>/dev/null && exit 0' 2
 sleep 2s
 if [[ ${OS} == Ubuntu ]];then
 	apt-get update
@@ -199,6 +221,8 @@ if [[ ! -e /usr/bin/bc ]];then
 		apt-get install bc -y
 	fi
 fi
+if [[ ! -e /usr/local/bin/ssr ]]; then
+
 #Start when boot
 if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
     cat >/etc/init.d/ssr-bash-python <<EOF
@@ -236,7 +260,6 @@ fi
 #Change CentOS7 Firewall
 if [[ ${OS} == CentOS && $CentOS_RHEL_version == 7 ]];then
     systemctl stop firewalld.service
-    systemctl disable firewalld.service
     yum install iptables-services -y
     cat << EOF > /etc/sysconfig/iptables
 # sample configuration for iptables service
@@ -256,10 +279,11 @@ if [[ ${OS} == CentOS && $CentOS_RHEL_version == 7 ]];then
 -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 COMMIT
 EOF
-systemctl restart iptables.service
-systemctl enable iptables.service
+    systemctl restart iptables.service
+    systemctl enable iptables.service
+    systemctl disable firewalld.service
 fi
-
+fi
 #Install SSR-Bash Background
 if [[ $1 == "develop" ]];then
 	wget -q -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/readour/AR-B-P-B/develop/ssr
