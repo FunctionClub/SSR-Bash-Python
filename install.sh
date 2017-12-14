@@ -82,23 +82,26 @@ if [[ ${OS} == Ubuntu ]];then
 	apt-get install git -y
 	apt-get install language-pack-zh-hans -y
 	apt-get -y install vnstat bc
-    apt-get install build-essential screen curl -y
+        apt-get -y install net-tools
+        apt-get install build-essential screen curl -y
 fi
 if [[ ${OS} == CentOS ]];then
 	yum install python screen curl -y
 	yum install python-setuptools -y && easy_install pip -y
 	yum install git -y
 	yum install bc -y
-	yum install vnstat
-    yum groupinstall "Development Tools" -y
+	yum install vnstat -y
+	yum install net-tools -y
+        yum groupinstall "Development Tools" -y
 fi
 if [[ ${OS} == Debian ]];then
 	apt-get update
 	apt-get install python screen curl -y
 	apt-get install python-pip -y
 	apt-get install git -y
+	apt-get -y install net-tools
 	apt-get -y install bc vnstat
-    apt-get install build-essential -y
+        apt-get install build-essential -y
 fi
 if [[ $? != 0 ]];then
     echo "安装失败，请稍候重试！"
