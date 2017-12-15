@@ -116,7 +116,7 @@ elif [[ -e ${libsodiumfileb} ]];then
     echo "libsodium已安装!"
 else
     cd $workdir
-    export LIBSODIUM_VER=1.0.15
+    export LIBSODIUM_VER=1.0.16
     wget -q https://github.com/jedisct1/libsodium/releases/download/${LIBSODIUM_VER}/libsodium-$LIBSODIUM_VER.tar.gz
     tar xvf libsodium-$LIBSODIUM_VER.tar.gz
     pushd libsodium-$LIBSODIUM_VER
