@@ -213,6 +213,7 @@ else
     fi
     cd ..
     mv AR-B-P-B SSR-Bash-Python
+    bashinstall="no"
 fi
 cd /usr/local/shadowsocksr
 bash initcfg.sh
@@ -224,7 +225,7 @@ if [[ ! -e /usr/bin/bc ]];then
 		apt-get install bc -y
 	fi
 fi
-if [[ ! -e /usr/local/bin/ssr ]]; then
+if [[ ${bashinstall} == "no" ]]; then
 
 #Start when boot
 if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
