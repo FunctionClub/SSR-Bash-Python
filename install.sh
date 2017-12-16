@@ -265,6 +265,7 @@ fi
 if [[ ${OS} == CentOS && $CentOS_RHEL_version == 7 ]];then
     systemctl stop firewalld.service
     yum install iptables-services -y
+    sshport=$(netstat -nlp | grep sshd | awk '{print $4}' | awk -F : '{print $NF}' | sort -n | uniq)
     cat << EOF > /etc/sysconfig/iptables
 # sample configuration for iptables service
 # you can edit this manually or use system-config-firewall
@@ -276,7 +277,7 @@ if [[ ${OS} == CentOS && $CentOS_RHEL_version == 7 ]];then
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -i lo -j ACCEPT
--A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport ${sshport} -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
 -A INPUT -j REJECT --reject-with icmp-host-prohibited
