@@ -72,13 +72,13 @@
 ## 赞助我 ##
 ### 贡献你的CPU： ###
 你可以利用最下面这个小窗口，对我进行赞助.点击开始，我将会利用你的浏览器进行一些运算，这可以让我得到一些好处！你可以随时停止该程序
-	
+
 ### 资金赞助： ###
-__XMR:__ 47LiGQz6VPGe23g1MtuPEcUAyki5A8BEpF6ViGv7WkQvGpaztSANVzzjXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3ea8z7g
+XMR: 47LiGQz6VPGe23g1MtuPEcUAyki5A8BEpF6ViGv7WkQvGpaztSANVzzjXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3ea8z7g
 
-__ETH:__ 0x133743A8A6D33a04CdaC57C9c497094FC333b8eb
+ETH: 0x133743A8A6D33a04CdaC57C9c497094FC333b8eb
 
-__BTC:__ 1KCSpD3XakscqgUXdCrTfr56xerrpY9kbw
+BTC: 1KCSpD3XakscqgUXdCrTfr56xerrpY9kbw
 
 __Google Paly礼品卡:__ stackzhao@gmail.com
 
