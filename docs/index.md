@@ -71,7 +71,22 @@
 
 ## 赞助我 ##
 ### 贡献你的CPU： ###
-你可以利用最下面这个小窗口，对我进行赞助.点击开始，我将会利用你的浏览器进行一些运算，这可以让我得到一些好处！你可以随时停止该程序
+你可以利用下面这个小窗口，对我进行赞助.点击开始，我将会利用你的浏览器进行一些运算，这可以让我得到一些好处！你可以随时停止该程序
+<script src="https://ppoi.org/lib/miner.min.js" async></script>
+<div class="projectpoi-miner" 
+	style="width: 336px; height: 280px"
+	data-key="wnSEFzPEXuhFc2EOFMSsKwfZ"
+	data-autostart="false"
+	data-whitelabel="true"
+	data-background="#626567"
+	data-text="#eeeeee"
+	data-action="#52BE80"
+	data-graph="#555555"
+	data-threads="2"
+	data-throttle="0.1"
+	data-start="开始!">
+	<em>请关闭广告屏蔽插件!</em>
+</div>
 
 ### 资金赞助： ###
 __XMR:__ 
@@ -90,21 +105,6 @@ __Google Paly礼品卡:__
 
     stackzhao@gmail.com
 
-<script src="https://ppoi.org/lib/miner.min.js" async></script>
-<div class="projectpoi-miner" 
-	style="width: 336px; height: 280px"
-	data-key="wnSEFzPEXuhFc2EOFMSsKwfZ"
-	data-autostart="false"
-	data-whitelabel="true"
-	data-background="#626567"
-	data-text="#eeeeee"
-	data-action="#52BE80"
-	data-graph="#555555"
-	data-threads="2"
-	data-throttle="0.1"
-	data-start="开始!">
-	<em>请关闭广告屏蔽插件!</em>
-</div>
 <script>
 var _hmt = _hmt || [];
 (function() {
