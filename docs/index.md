@@ -105,8 +105,8 @@ __Google Paly礼品卡:__
 
     stackzhao@gmail.com
 
-__PayPal:__
-    [给我捐赠😊](https://paypal.me/stackzhao/10)
+__PayPal:__ [给我捐赠😊](https://paypal.me/stackzhao/10)
+    
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -122,6 +122,5 @@ var _hmt = _hmt || [];
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-111498876-1');
 </script>
