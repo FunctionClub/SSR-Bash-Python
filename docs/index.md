@@ -89,17 +89,21 @@
 </div>
 
 ### 资金赞助： ###
-__XMR:__ 
+__XMR(门罗币):__ 
 
     47LiGQz6VPGe23g1MtuPEcUAyki5A8BEpF6ViGv7WkQvGpaztSANVzzjXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3ea8z7g
 
-__ETH:__
+__ETH(以太坊):__
 
-    0x133743A8A6D33a04CdaC57C9c497094FC333b8eb
+    [0x133743A8A6D33a04CdaC57C9c497094FC333b8eb](https://etherscan.io/address/0x133743A8A6D33a04CdaC57C9c497094FC333b8eb)
 
-__BTC:__ 
+__BTC(比特币):__ 
 
-    1KCSpD3XakscqgUXdCrTfr56xerrpY9kbw
+    [1KCSpD3XakscqgUXdCrTfr56xerrpY9kbw](https://blockchain.info/address/1KCSpD3XakscqgUXdCrTfr56xerrpY9kbw)
+
+__BCH(比特现金):__
+
+    [1HsB88an66MYrCqb4qUhPWT2gwRfNi8QxL](https://blockdozer.com/insight/address/1HsB88an66MYrCqb4qUhPWT2gwRfNi8QxL)
 
 __Google Paly礼品卡:__ 
 
