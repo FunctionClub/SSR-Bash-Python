@@ -116,7 +116,7 @@ __支付宝红包:__
 <button class="btn" data-clipboard-text="【支付宝】年终红包再加10亿！12月24日还有机会获得圣诞惊喜红包！长按复制此消息，打开最新版支付宝就能领取！Z6mqlh92iN">
     复制吱口令到剪贴板
 </button>
-<script src="css/clipboard.js"></script>
+<script src="js/clipboard.js"></script>
     <script>
     var clipboard = new Clipboard('.btn');
     clipboard.on('success', function(e) {
