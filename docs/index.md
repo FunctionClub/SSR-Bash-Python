@@ -110,7 +110,22 @@ __Google Paly礼品卡:__
     stackzhao@gmail.com
 
 __PayPal:__ [![给我捐赠](https://s1.ax1x.com/2017/12/23/jbclD.jpg)](https://paypal.me/stackzhao/5)
-    
+    
+__支付宝红包:__
+
+<button class="btn" data-clipboard-text="【支付宝】年终红包再加10亿！12月24日还有机会获得圣诞惊喜红包！长按复制此消息，打开最新版支付宝就能领取！Z6mqlh92iN">
+    复制吱口令到剪贴板
+</button>
+<script src="css/clipboard.js"></script>
+    <script>
+    var clipboard = new Clipboard('.btn');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
 <script>
 var _hmt = _hmt || [];
 (function() {
