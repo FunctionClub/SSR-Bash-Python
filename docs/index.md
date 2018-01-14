@@ -136,8 +136,6 @@ var _hmt = _hmt || [];
 复制吱口令到剪贴板
 </button>
 
-### 一言 ###
-<script type="text/javascript" src="https://us.fdos.me/yiyan/;charset=utf-8"></script>
 <script src="js/clipboard.js"></script>
     <script>
     var clipboard = new Clipboard('.btn');
