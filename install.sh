@@ -345,11 +345,11 @@ if [[ $1 == develop ]];then
     fi
     checkcron=$(crontab -l | grep "timelimit.sh")
     if [[ -z ${checkcron} ]];then
-        crontab -l > ~/crontab.tmp
+        crontab -l > ~/crontab.bak
         sed -i "/timelimit.sh/d" ~/crontab.tmp
-        echo -e "\n*/5 * * * * /bin/bash /usr/local/SSR-Bash-Python/timelimit.sh c" >> ~/crontab.tmp
-        crontab ~/crontab.tmp
-        rm -r ~/crontab.tmp
+        echo -e "\n*/5 * * * * /bin/bash /usr/local/SSR-Bash-Python/timelimit.sh c" >> ~/crontab.bak
+        crontab ~/crontab.bak
+        rm -r ~/crontab.bak 
     fi
 fi
 if [[ -e /etc/sysconfig/iptables-config ]];then
