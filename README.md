@@ -1,7 +1,7 @@
 # SSR多用户管理脚本（基于官方mujson版本）
 - [x] 稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B)  [![Code Climate](https://codeclimate.com/github/Readour/AR-B-P-B/badges/gpa.svg)](https://codeclimate.com/github/Readour/AR-B-P-B)
 
-- [x] 开发版V1.9.5：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
+- [x] 开发版V1.9.7：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
 
 ## 介绍 ##
 
@@ -34,6 +34,7 @@
 - 可自定义的服务器巡检，故障自动重启服务，确保链接稳定有效
 - 可对配置进行备份、还原，迁移服务器只需在新服务器上还原配置，无需重复设置
 - 支持IP黑名单功能，可通过端口查询，直接加入黑名单，禁止该IP访问服务器的所有服务
+- 允许针对不同用户限制帐号有效期，到期自动删除帐号
 
 不如看图:
 
@@ -41,9 +42,6 @@
 
 未来可能的交互界面（吊下胃口）：
 ![](https://github.com/zyh001/zyh001.github.com/blob/master/images/future.png)
-
-## 缺点 ##
-- 默认未设置开机启动
 
 ## 安装或更新到最新开发版(支持新特性，推荐使用) ##
     wget -q -N --no-check-certificate https://raw.githubusercontent.com/Readour/AR-B-P-B/master/install.sh && bash install.sh develop
