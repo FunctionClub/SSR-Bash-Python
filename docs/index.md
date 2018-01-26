@@ -1,7 +1,7 @@
 # SSR多用户管理脚本（基于官方mujson版本）
 稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B) [![Code Climate](https://codeclimate.com/github/Readour/AR-B-P-B/badges/gpa.svg)](https://codeclimate.com/github/Readour/AR-B-P-B)
 
-开发版V1.9.5：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
+开发版V1.9.7：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
 
 ## 介绍 ##
 
@@ -33,6 +33,7 @@
 - 傻瓜式的BBR、锐速、LotServer一键构建（有风险，仅开发版可用）
 - 可自定义的服务器巡检，故障自动重启服务，确保链接稳定有效
 - 可对配置进行备份、还原，迁移服务器只需在新服务器上还原配置，无需麻烦设置
+- 允许针对不同用户设置帐号有效期，到期自动删除！
 
 不如看图:
 
