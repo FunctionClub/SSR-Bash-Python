@@ -59,9 +59,9 @@ StopInstall(){
         systemctl disable iptables.service
         systemctl enable firewalld.service
     fi
-    crontab -l > "~/crontab.bak"
-    sed -i "/timelimit.sh/d" "~/crontab.bak"
-    crontab "~/crontab.bak"
+    crontab -l > ~/crontab.bak
+    sed -i "/timelimit.sh/d" ~/crontab.bak
+    crontab ~/crontab.bak
     rm -rf ~/crontab.bak
     rm -rf $0
     echo "清理完成!"
@@ -158,9 +158,9 @@ if [ -e /usr/local/bin/ssr ];then
 		echo "删除:${PWD}/install.sh"
 		rm -f ${PWD}/install.sh
         echo "清理杂项!"
-        crontab -l > "~/crontab.bak"
-        sed -i "/timelimit.sh/d" "~/crontab.bak"
-        crontab "~/crontab.bak"
+        crontab -l > ~/crontab.bak
+        sed -i "/timelimit.sh/d" ~/crontab.bak
+        crontab ~/crontab.bak
         rm -rf ~/crontab.bak
 		sleep 1s
 		echo "卸载完成!!"
@@ -346,10 +346,10 @@ if [[ $1 == develop ]];then
     checkcron=$(crontab -l | grep "timelimit.sh")
     if [[ -z ${checkcron} ]];then
         crontab -l > ~/crontab.tmp
-        sed -i "/timelimit.sh/d" "~/crontab.tmp"
-        echo -e "\n*/5 * * * * /bin/bash /usr/local/SSR-Bash-Python/timelimit.sh c" >> "~/crontab.tmp"
-        crontab "~/crontab.tmp"
-        rm -r "~/crontab.tmp"
+        sed -i "/timelimit.sh/d" ~/crontab.tmp
+        echo -e "\n*/5 * * * * /bin/bash /usr/local/SSR-Bash-Python/timelimit.sh c" >> ~/crontab.tmp
+        crontab ~/crontab.tmp
+        rm -r ~/crontab.tmp
     fi
 fi
 if [[ -e /etc/sysconfig/iptables-config ]];then
