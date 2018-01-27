@@ -59,10 +59,13 @@ StopInstall(){
         systemctl disable iptables.service
         systemctl enable firewalld.service
     fi
-    crontab -l > ~/crontab.bak
-    sed -i "/timelimit.sh/d" ~/crontab.bak
-    crontab ~/crontab.bak
-    rm -rf ~/crontab.bak
+    checkcron=$(crontab -l 2>/dev/null | grep "timelimit.sh")
+    if [[ ! -z ${checkcron} ]];then
+        crontab -l > ~/crontab.bak 1>/dev/null 2>&1
+        sed -i "/timelimit.sh/d" ~/crontab.bak 1>/dev/null 2>&1
+        crontab ~/crontab.bak 1>/dev/null 2>&1
+        rm -rf ~/crontab.bak
+    fi
     rm -rf $0
     echo "清理完成!"
 }
@@ -86,8 +89,9 @@ if [[ ${OS} == Ubuntu ]];then
 	apt-get install git -y
 	apt-get install language-pack-zh-hans -y
 	apt-get -y install vnstat bc
-        apt-get -y install net-tools
-        apt-get install build-essential screen curl -y
+    apt-get -y install net-tools
+    apt-get install build-essential screen curl -y
+    apt-get install cron -y
 fi
 if [[ ${OS} == CentOS ]];then
 	yum install python screen curl -y
@@ -96,7 +100,8 @@ if [[ ${OS} == CentOS ]];then
 	yum install bc -y
 	yum install vnstat -y
 	yum install net-tools -y
-        yum groupinstall "Development Tools" -y
+    yum groupinstall "Development Tools" -y
+    yum install vixie-cron crontabs -y
 fi
 if [[ ${OS} == Debian ]];then
 	apt-get update
@@ -105,7 +110,8 @@ if [[ ${OS} == Debian ]];then
 	apt-get install git -y
 	apt-get -y install net-tools
 	apt-get -y install bc vnstat
-        apt-get install build-essential -y
+    apt-get install build-essential -y
+    apt-get install cron -y
 fi
 if [[ $? != 0 ]];then
     echo "安装失败，请稍候重试！"
@@ -158,9 +164,9 @@ if [ -e /usr/local/bin/ssr ];then
 		echo "删除:${PWD}/install.sh"
 		rm -f ${PWD}/install.sh
         echo "清理杂项!"
-        crontab -l > ~/crontab.bak
-        sed -i "/timelimit.sh/d" ~/crontab.bak
-        crontab ~/crontab.bak
+        crontab -l > ~/crontab.bak 1>/dev/null 2>&1
+        sed -i "/timelimit.sh/d" ~/crontab.bak 1>/dev/null 2>&1
+        crontab ~/crontab.bak 1>/dev/null 2>&1
         rm -rf ~/crontab.bak
 		sleep 1s
 		echo "卸载完成!!"
@@ -343,10 +349,10 @@ if [[ $1 == develop ]];then
         	echo "你居然拒绝了T.T"
         fi
     fi
-    checkcron=$(crontab -l | grep "timelimit.sh")
+    checkcron=$(crontab -l 2>/dev/null | grep "timelimit.sh")
     if [[ -z ${checkcron} ]];then
-        crontab -l > ~/crontab.bak
-        sed -i "/timelimit.sh/d" ~/crontab.tmp
+        crontab -l > ~/crontab.bak 1>/dev/null 2>&1
+        sed -i "/timelimit.sh/d" ~/crontab.tmp 1>/dev/null 2>&1
         echo -e "\n*/5 * * * * /bin/bash /usr/local/SSR-Bash-Python/timelimit.sh c" >> ~/crontab.bak
         crontab ~/crontab.bak
         rm -r ~/crontab.bak 
