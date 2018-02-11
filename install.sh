@@ -173,8 +173,9 @@ if [ -e /usr/local/bin/ssr ];then
 		exit 0
 	fi
     if [[ ! $yn == n ]];then
-        echo "你是否为其它版本迁移而来？（Y/N）"
-        read -t 2 -n 1 yn
+        if [[ ! -e /usr/local/SSR-Bash-Python/version.txt ]];then
+        	yn="y"
+        fi
     fi
     if [[ ${yn} == [yY] ]];then
         mv /usr/local/shadowsocksr/mudb.json /usr/local/mudb.json
