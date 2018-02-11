@@ -1,7 +1,7 @@
 # SSR多用户管理脚本（基于官方mujson版本）
 稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B) [![Code Climate](https://codeclimate.com/github/Readour/AR-B-P-B/badges/gpa.svg)](https://codeclimate.com/github/Readour/AR-B-P-B)
 
-开发版V1.9.7：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
+开发版V1.9.8：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
 
 ## 介绍 ##
 
@@ -28,7 +28,7 @@
 - 自助修改SSR加密方式、协议、混淆等参数
 - 自动统计，方便查询每个用户端口的流量使用情况
 - 自动安装Libsodium库以支持Chacha20等加密方式
-- 支持用户二维码生成(功能测试中，仅开发版可用)
+- 支持用户二维码生成(仅开发版可用)
 - 支持一键构建ss-panel-V3-mod,前端后端自动对接，无需额外操作（仅开发版可用）
 - 傻瓜式的BBR、锐速、LotServer一键构建（有风险，仅开发版可用）
 - 可自定义的服务器巡检，故障自动重启服务，确保链接稳定有效

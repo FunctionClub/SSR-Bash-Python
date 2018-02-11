@@ -1,7 +1,7 @@
 # SSR多用户管理脚本（基于官方mujson版本）
 - [x] 稳定版V1.7.2：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=master)](https://travis-ci.org/Readour/AR-B-P-B)  [![Code Climate](https://codeclimate.com/github/Readour/AR-B-P-B/badges/gpa.svg)](https://codeclimate.com/github/Readour/AR-B-P-B)
 
-- [x] 开发版V1.9.7：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
+- [x] 开发版V1.9.8：[![Build Status](https://travis-ci.org/Readour/AR-B-P-B.svg?branch=develop)](https://travis-ci.org/Readour/AR-B-P-B)
 
 ## 介绍 ##
 
@@ -28,7 +28,7 @@
 - 自助修改SSR加密方式、协议、混淆等参数
 - 自动统计，方便查询每个用户端口的流量使用情况
 - 自动安装Libsodium库以支持Chacha20等加密方式
-- 支持用户二维码生成(功能测试中，仅开发版可用)
+- 支持用户二维码生成(仅开发版可用)
 - 支持一键构建ss-panel-V3-mod,前端后端自动对接，无需额外操作（仅开发版可用）
 - 傻瓜式的BBR、锐速、LotServer一键构建（有风险，仅开发版可用）
 - 可自定义的服务器巡检，故障自动重启服务，确保链接稳定有效
@@ -60,7 +60,7 @@
 
 ## 离线安装 ##
     #此方法可用于网络情况不好，导致缺少文件的情况.亦可下载该脚本，用于备份
-    wget -q -N --no-check-certificate https://github.com/Readour/AR-B-P-B/releases/download/1.9.4/install.sh && bash install.sh
+    wget -q -N --no-check-certificate https://github.com/Readour/AR-B-P-B/releases/download/1.9.7/install.sh && bash install.sh
     
 ## 客户端下载 ##
 常用平台：[Android](https://github.com/shadowsocksrr/shadowsocksr-latest-bin-backup/raw/master/Shadowsocksr-android-3.4.0.5.apk)、[MacOS](https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.3-R8/ShadowsocksX-NG-R8.dmg)、[Windows](https://github.com/Readour/ShadowsocksR-Csharp/releases/download/4.7.0/ShadowsocksR-4.7.0-win.CONCISE.7z)、[Linux](https://github.com/shadowsocks/shadowsocks-qt5/releases/download/v2.9.0/Shadowsocks-Qt5-x86_64.AppImage)、[OpenWrt/LEDE](https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases)、[iOS](https://github.com/Readour/breakwa11.github.io/raw/master/download/Shadowrocket%202.1.14.ipa)
