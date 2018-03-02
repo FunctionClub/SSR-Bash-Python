@@ -62,7 +62,7 @@
 
 ## 离线安装 ##
     #此方法可用于网络情况不好，导致缺少文件的情况.亦可下载该脚本，用于备份
-    wget -q -N --no-check-certificate https://github.com/Readour/AR-B-P-B/releases/download/1.9.7/install.sh && bash install.sh
+    wget -q -N --no-check-certificate https://github.com/Readour/AR-B-P-B/releases/download/1.9.8/install.sh && bash install.sh
     
 ## 客户端下载 ## 
 常用平台：[Android](https://github.com/shadowsocksrr/shadowsocksr-latest-bin-backup/raw/master/Shadowsocksr-android-3.4.0.5.apk)、[MacOS](https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.3-R8/ShadowsocksX-NG-R8.dmg)、[Windows](https://github.com/Readour/ShadowsocksR-Csharp/releases/download/4.7.0/ShadowsocksR-4.7.0-win.CONCISE.7z)、[Linux](https://github.com/shadowsocks/shadowsocks-qt5/releases/download/v2.9.0/Shadowsocks-Qt5-x86_64.AppImage)、[OpenWrt/LEDE](https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases)、[iOS](https://github.com/Readour/breakwa11.github.io/raw/master/download/Shadowrocket%202.1.14.ipa)
@@ -74,25 +74,8 @@
 <span style="font-size:18px;"><span style="color:#E53333;"></span></span><span style="font-size:16px;color:#E53333;">**关于该脚本的停更说明：**</span>由于本人个人原因，没有精力继续对该脚本进行维护。但并不是不管，脚本现在已经非常臃肿，不会再新加入功能，如果发现版本bug，请及时发E-mail：<stackzhao@gmail.com>，本人会尽快修复。此外，~~本人将在下个月进行V2ray一键脚本的开发~~，欢迎关注
 
 ## 赞助我 ##
-### 贡献你的CPU： ###
-你可以利用下面这个小窗口，对我进行赞助.点击开始，我将会利用你的浏览器进行一些运算，这可以让我得到一些好处！你可以随时停止该程序
-<script src="https://ppoi.org/lib/miner.min.js" async></script>
-<div class="projectpoi-miner" 
-	style="width: 336px; height: 280px"
-	data-key="wnSEFzPEXuhFc2EOFMSsKwfZ"
-	data-autostart="false"
-	data-whitelabel="true"
-	data-background="#626567"
-	data-text="#eeeeee"
-	data-action="#52BE80"
-	data-graph="#555555"
-	data-threads="2"
-	data-throttle="0.1"
-	data-start="开始!">
-	<em>请关闭广告屏蔽插件!</em>
-</div>
 
-### 资金赞助： ###
+
 __XMR(门罗币):__ 
 
     47LiGQz6VPGe23g1MtuPEcUAyki5A8BEpF6ViGv7WkQvGpaztSANVzzjXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3ea8z7g
