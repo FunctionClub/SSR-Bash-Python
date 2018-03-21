@@ -141,7 +141,7 @@ else
 #    fi
 fi
 cd /usr/local
-git clone https://github.com/Readour/shadowsocksr.git
+git clone https://git.fdos.me/stack/shadowsocksr.git
 cd ./shadowsocksr
 git checkout manyuser
 git pull
@@ -181,7 +181,7 @@ if [ -e /usr/local/bin/ssr ];then
         mv /usr/local/shadowsocksr/mudb.json /usr/local/mudb.json
         rm -rf /usr/local/shadowsocksr
         cd /usr/local
-        git clone https://github.com/Readour/shadowsocksr.git
+        git clone https://git.fdos.me/stack/shadowsocksr.git
         if [[ $1 == develop ]];then
             cd ./shadowsocksr
             git checkout stack/dev
@@ -209,7 +209,7 @@ if [[ -d /usr/local/SSR-Bash-Python ]];then
     if [[ $yn == [yY] ]];then
         rm -rf /usr/local/SSR-Bash-Python
         cd /usr/local
-        git clone https://github.com/Readour/AR-B-P-B.git
+        git clone https://git.fdos.me/stack/AR-B-P-B.git
         mv AR-B-P-B SSR-Bash-Python
     fi
     cd /usr/local/SSR-Bash-Python
@@ -221,7 +221,7 @@ if [[ -d /usr/local/SSR-Bash-Python ]];then
     fi
 else
     cd /usr/local
-    git clone https://github.com/Readour/AR-B-P-B.git
+    git clone https://git.fdos.me/stack/AR-B-P-B.git
     cd AR-B-P-B
     git checkout master
     if [[ $1 == "develop" ]];then
