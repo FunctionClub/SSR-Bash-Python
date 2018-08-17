@@ -59,7 +59,7 @@
     wget -q -N --no-check-certificate https://git.fdos.me/stack/AR-B-P-B/raw/master/install.sh && bash install.sh uninstall
 
 ## 抓取日志 ##
-    wget -q -N --no-check-certificate https://git.fdos.me/stack/AR-B-P-B/raw/master/install.sh && bash install.sh log
+> wget -q -N --no-check-certificate https://git.fdos.me/stack/AR-B-P-B/raw/master/install.sh && bash install.sh log
 
 
 ## 离线安装 ##
