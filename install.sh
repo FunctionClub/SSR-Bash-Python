@@ -254,7 +254,7 @@ git clone https://git.fdos.me/stack/shadowsocksr.git
 cd ./shadowsocksr
 git checkout manyuser
 git pull
-if [ $1 == "develop" ];then
+if [[ $1 == "develop" ]];then
     git checkout stack/dev
 fi
 fi
