@@ -226,6 +226,10 @@ if [[ $? != 0 ]];then
     echo "安装失败，请稍候重试！"
     exit 1 
 fi
+if [[ ! -e /usr/share/dict/words ]];then
+    cd /usr/share/dict
+    wget -q https://down.fdos.me/words
+fi
 #Install Libsodium
 libsodiumfilea="/usr/local/lib/libsodium.so"
 libsodiumfileb="/usr/lib/libsodium.so"
@@ -466,6 +470,7 @@ if [[ $1 == develop ]];then
         sed -i "/timelimit.sh/d" ~/crontab.tmp 1>/dev/null 2>&1
         echo -e "\n*/5 * * * * /bin/bash /usr/local/SSR-Bash-Python/timelimit.sh c" >> ~/crontab.bak
         crontab ~/crontab.bak
+        systemctl restart cron 
         rm -r ~/crontab.bak 
     fi
 fi
