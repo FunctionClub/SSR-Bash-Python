@@ -198,7 +198,7 @@ if [[ ${OS} == Ubuntu ]];then
 	apt-get install git -y
 	apt-get install language-pack-zh-hans -y
 	apt-get -y install vnstat bc
-    apt-get -y install net-tools
+    apt-get -y install net-tools dnsutils
     apt-get install build-essential screen curl -y
     apt-get install cron -y
 fi
@@ -208,6 +208,7 @@ if [[ ${OS} == CentOS ]];then
 	yum install git -y
 	yum install bc -y
 	yum install vnstat -y
+        yum -y install bind-utils
 	yum install net-tools -y
     yum groupinstall "Development Tools" -y
     yum install vixie-cron crontabs -y
@@ -217,7 +218,7 @@ if [[ ${OS} == Debian ]];then
 	apt-get install python screen curl -y
 	apt-get install python-pip -y
 	apt-get install git -y
-	apt-get -y install net-tools
+	apt-get -y install net-tools dnsutils
 	apt-get -y install bc vnstat
     apt-get install build-essential -y
     apt-get install cron -y
@@ -428,16 +429,26 @@ else
 fi
 
 #Modify ShadowsocksR API
-nowip=$(grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" /usr/local/shadowsocksr/userapiconfig.py)
 sed -i "s/sspanelv2/mudbjson/g" /usr/local/shadowsocksr/userapiconfig.py
 sed -i "s/UPDATE_TIME = 60/UPDATE_TIME = 10/g" /usr/local/shadowsocksr/userapiconfig.py
-sed -i "s/SERVER_PUB_ADDR = '${nowip}'/SERVER_PUB_ADDR = '$(wget -qO- -t1 -T2 ipinfo.io/ip)'/g" /usr/local/shadowsocksr/userapiconfig.py
+
 #INstall Success
 read -t 20 -p "输入与您主机绑定的域名(请在20秒内输入，超时将跳过本步骤.默认填入本机IP): " ipname
-if [[ -z ${ipname} ]];then
-    ipname=$(wget -qO- -t1 -T2 ipinfo.io/ip)
-fi
+  if [[ -z ${ipname} ]];then
+       ipname=$(wget -qO- -t1 -T2 ipinfo.io/ip)
+  else
+       myip=$(wget -qO- -t1 -T2 ipinfo.io/ip)
+       if [[ ${myip} != ${ipname} ]];then
+           domainip=$(dig +short -t a "${ipname}" 2>/dev/null | awk '/^[0-9]/')
+           if [[ ${myip} != ${domainip} ]];then
+              echo "警告，您输入的域名与实际不符或解析未生效，将为您填入您的真实IP，稍后您可以待解析生效后再次执行安装脚本填入"
+              ipname=${myip}
+              sleep 1s
+           fi
+       fi
+  fi
 echo "$ipname" > /usr/local/shadowsocksr/myip.txt
+sed -i "s/SERVER_PUB_ADDR = .*$/SERVER_PUB_ADDR = '${ipname}'/g" /usr/local/shadowsocksr/userapiconfig.py 
 if [[ $1 == develop ]];then
     if [[ -e /usr/local/SSR-Bash-Python/check.log ]];then
         cd /usr/local/SSR-Bash-Python
