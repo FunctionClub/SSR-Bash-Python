@@ -269,6 +269,30 @@ if [ -e /usr/local/bin/ssr ];then
 	if [[ $1 == "uninstall" ]];then
 		echo "开始卸载"
 		sleep 1s
+		echo "删除iptables规则"
+		ports=$(cat /usr/local/shadowsocksr/mudb.json | grep '"port":' | awk -F":" '{ print $2 }' | sed -i 's /[,."]//g')
+		for port in "${ports}"
+		do
+		if [[ ${OS} =~ ^Ubuntu$|^Debian$ ]];then
+			iptables-restore < /etc/iptables.up.rules
+			iptables -D INPUT -m state --state NEW -m tcp -p tcp --dport $port -j ACCEPT
+			iptables -D INPUT -m state --state NEW -m udp -p udp --dport $port -j ACCEPT
+			iptables-save > /etc/iptables.up.rules
+		fi
+		if [[ ${OS} == CentOS ]];then
+			if [[ $CentOS_RHEL_version == 7 ]];then
+			iptables-restore < /etc/iptables.up.rules
+	    		iptables -D INPUT -m state --state NEW -m tcp -p tcp --dport $port -j ACCEPT
+			iptables -D INPUT -m state --state NEW -m udp -p udp --dport $port -j ACCEPT
+			iptables-save > /etc/iptables.up.rules
+		else
+    			iptables -D INPUT -m state --state NEW -m tcp -p tcp --dport $port -j ACCEPT
+			iptables -D INPUT -m state --state NEW -m udp -p udp --dport $port -j ACCEPT
+			/etc/init.d/iptables save
+			/etc/init.d/iptables restart
+		fi
+		fi
+		done
 		echo "删除:/usr/local/bin/ssr"
 		rm -f /usr/local/bin/ssr
 		echo "删除:/usr/local/SSR-Bash-Python"
