@@ -270,7 +270,7 @@ if [ -e /usr/local/bin/ssr ];then
 		echo "开始卸载"
 		sleep 1s
 		echo "删除iptables规则"
-		ports=$(cat /usr/local/shadowsocksr/mudb.json | grep '"port":' | awk -F":" '{ print $2 }' | sed -i 's /[,."]//g')
+		ports=$(cat /usr/local/shadowsocksr/mudb.json | grep '"port":' | awk -F":" '{ print $2 }' | sed 's/[,."]//g')
 		for port in "${ports}"
 		do
 		if [[ ${OS} =~ ^Ubuntu$|^Debian$ ]];then
