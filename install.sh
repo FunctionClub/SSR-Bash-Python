@@ -36,6 +36,8 @@ elif [ -n "$(grep Ubuntu /etc/issue)" -o "$(lsb_release -is 2>/dev/null)" == 'Ub
     [ ! -e "$(which lsb_release)" ] && { apt-get -y update; apt-get -y install lsb-release; clear; }
     Ubuntu_version=$(lsb_release -sr | awk -F. '{print $1}')
     [ -n "$(grep 'Linux Mint 18' /etc/issue)" ] && Ubuntu_version=16
+elif [ ! -z "$(grep 'Arch Linux' /etc/issue)" ];then
+    OS=Arch
 else
     echo "Does not support this OS, Please contact the author! "
     kill -9 $$
@@ -223,6 +225,23 @@ if [[ ${OS} == Debian ]];then
     apt-get install build-essential -y
     apt-get install cron -y
 fi
+if [[${OS} == Arch ]];then
+    if ! type -p yay &> /dev/null ;then
+    cd /tmp
+    wget -q https://github.com/Jguer/yay/releases/download/v9.0.1/yay_9.0.1_x86_64.tar.gz
+    tar xzf ./yay_9.0.1_x86_64.tar.gz 
+    cd ./yay_9*
+    mv ./yay /usr/bin
+    chmod +x /usr/bin
+    fi
+    yay -Syyu --noconfirm
+    yay -S --noconfirm python screen curl
+    yay -S --noconfirm python-pip
+    yay -S --noconfirm git
+    yay -S --noconfirm bc net-tools bind-tools
+    yay -S --noconfirm gcc cronie
+    yay -S --noconfirm vnstat
+fi
 if [[ $? != 0 ]];then
     echo "安装失败，请稍候重试！"
     exit 1 
@@ -272,8 +291,9 @@ if [ -e /usr/local/bin/ssr ];then
 		echo "删除iptables规则"
 		ports=$(cat /usr/local/shadowsocksr/mudb.json | grep '"port":' | awk -F":" '{ print $2 }' | sed 's/[,."]//g')
 		for port in "${ports}"
-		do
-		if [[ ${OS} =~ ^Ubuntu$|^Debian$ ]];then
+		
+do
+		if [[ ${OS} =~ ^Ubuntu$|^Debian$|^Arch$ ]];then
 			iptables-restore < /etc/iptables.up.rules
 			iptables -D INPUT -m state --state NEW -m tcp -p tcp --dport $port -j ACCEPT
 			iptables -D INPUT -m state --state NEW -m udp -p udp --dport $port -j ACCEPT
@@ -382,7 +402,7 @@ fi
 if [[ ${bashinstall} == "no" ]]; then
 
 #Start when boot
-if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
+if [[ ${OS} == Ubuntu || ${OS} == Debian || ${OS} == Arch ]];then
     cat >/etc/init.d/ssr-bash-python <<EOF
 #!/bin/sh
 ### BEGIN INIT INFO
