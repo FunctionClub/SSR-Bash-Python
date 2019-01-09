@@ -403,7 +403,20 @@ fi
 if [[ ${bashinstall} == "no" ]]; then
 
 #Start when boot
-if [[ ${OS} == Ubuntu || ${OS} == Debian || ${OS} == Arch ]];then
+if [[ ${OS} == Arch ]];then
+cat >/usr/lib/systemd/system/ssr-bash-python.service <<EOF
+[Unit]
+Description=AutoExec
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=iptables-restore < /etc/iptables.up.rules && bash /usr/local/shadowsocksr/logrun.sh
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl enable ssr-bash-python
+fi
+if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
     cat >/etc/init.d/ssr-bash-python <<EOF
 #!/bin/sh
 ### BEGIN INIT INFO
