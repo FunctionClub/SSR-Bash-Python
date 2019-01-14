@@ -548,6 +548,7 @@ if [[ -e /etc/sysconfig/iptables-config ]];then
         if [[ -z ${ipconf} ]];then
                 sed -i 's/IPTABLES_MODULES_UNLOAD="yes"/IPTABLES_MODULES_UNLOAD="no"/g' /etc/sysconfig/iptables-config
                 echo "安装完成，准备重启"
+		echo "bash /usr/local/bin/ssr" >> ~/.bashrc
                 sleep 3s
                 reboot
         fi
