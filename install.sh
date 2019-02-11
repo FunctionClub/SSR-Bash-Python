@@ -226,21 +226,13 @@ if [[ ${OS} == Debian ]];then
     apt-get install cron -y
 fi
 if [[ ${OS} == Arch ]];then
-    if ! type -p yay &> /dev/null ;then
-    cd /tmp
-    wget -q https://github.com/Jguer/yay/releases/download/v9.0.1/yay_9.0.1_x86_64.tar.gz
-    tar xzf ./yay_9.0.1_x86_64.tar.gz 
-    cd ./yay_9*
-    mv ./yay /usr/bin
-    chmod +x /usr/bin/yay
-    fi
-    yay -Syyu --noconfirm
-    yay -S --noconfirm python screen curl
-    yay -S --noconfirm python-pip
-    yay -S --noconfirm git
-    yay -S --noconfirm bc net-tools bind-tools
-    yay -S --noconfirm gcc cronie
-    yay -S --noconfirm vnstat
+    pacman -Syyu --noconfirm
+    pacman -S --noconfirm python screen curl
+    pacman -S --noconfirm python-pip
+    pacman -S --noconfirm git
+    pacman -S --noconfirm bc net-tools bind-tools
+    pacman -S --noconfirm gcc cronie
+    pacman -S --noconfirm vnstat
     ln -s /etc/iptables/iptables.rules /etc/iptables.up.rules
 fi
 if [[ $? != 0 ]];then
